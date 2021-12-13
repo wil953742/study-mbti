@@ -1,0 +1,11 @@
+{
+  "defaultSeverity": "error",
+  "extends": ["tslint-plugin-prettier", "tslint-config-prettier"],
+  "jsRules": {},
+  "rules": {
+    "prettier": true,
+    "semicolon": true,
+    "quotemark": [true, "single"]
+  },
+  "rulesDirectory": []
+}

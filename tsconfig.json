@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "module": "ES6", // 모듈 형식 ES6
+    "moduleResolution": "Node", // 모듈 해석 Node
+    "esModuleInterop": true, // commonJS 모듈을 ES6로 import
+    "sourceMap": true // 디버깅 맵
+  },
+  "include": ["src/**/*.ts"]
+}
