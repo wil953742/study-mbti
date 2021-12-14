@@ -1,22 +1,23 @@
-const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-require("dotenv").config();
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+require('dotenv').config();
 
 const { MODE } = process.env;
 const DEVTOOL =
-  MODE === "production" ? "cheap-module-source-map" : "inline-source-map";
+  MODE === 'production' ? 'cheap-module-source-map' : 'inline-source-map';
 
 module.exports = {
   mode: MODE,
-  entry: "./src/index.ts",
+  entry: './src/index.ts',
   output: {
-    filename: "[name].bundle.js",
-    path: path.resolve(__dirname, "dist"),
+    filename: '[name].bundle.js',
+    path: path.resolve(__dirname, 'dist'),
     clean: true,
   },
   devtool: DEVTOOL,
   devServer: {
-    static: "./dist",
+    static: './dist',
   },
   module: {
     rules: [
@@ -24,10 +25,10 @@ module.exports = {
         test: /[\.js]$/,
         exclude: /node_module/,
         use: {
-          loader: "babel-loader",
+          loader: 'babel-loader',
           options: {
-            presets: ["@babel/preset-env"],
-            plugins: ["@babel/plugin-proposal-class-properties"],
+            presets: ['@babel/preset-env'],
+            plugins: ['@babel/plugin-proposal-class-properties'],
           },
         },
       },
@@ -35,40 +36,40 @@ module.exports = {
         test: /\.ts$/,
         exclude: /node_module/,
         use: {
-          loader: "ts-loader",
+          loader: 'ts-loader',
         },
       },
       {
         test: /\.s[ac]ss$/,
         exclude: /node_modules/,
-        use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
       },
       {
         test: /\.(jpe?g|png|gif|svg)$/,
-        dependency: { not: ["url"] },
+        dependency: { not: ['url'] },
         use: [
           {
-            loader: "url-loader",
+            loader: 'url-loader',
             options: {
-              name: "image/[name].[ext]?[hash]",
+              name: 'image/[name].[ext]?[hash]',
               limit: 8192,
             },
           },
         ],
-        type: "javascript/auto",
+        type: 'javascript/auto',
       },
     ],
   },
   resolve: {
-    modules: [path.join(__dirname, "src"), "node_modules"],
-    extensions: [".ts", ".js"],
+    modules: [path.join(__dirname, 'src'), 'node_modules'],
+    extensions: ['.ts', '.js'],
     alias: {
-      "@": path.resolve(__dirname, "src"),
+      '@': path.resolve(__dirname, 'src'),
     },
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "./src/index.html",
+      template: './src/index.html',
     }),
   ],
 };
