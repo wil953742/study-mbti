@@ -1,17 +1,17 @@
-import { observe, observable } from './observer';
+import { observe, observable } from './Observer';
 
-export class Component {
-  $target;
-  props;
-  state;
+export default class Component {
+  protected $target;
+  protected props;
+  protected state;
 
-  constructor($target, props) {
+  constructor($target: Element, props = null) {
     this.$target = $target;
     this.props = props;
-    this.init();
+    this.subscribe();
   }
 
-  init() {
+  subscribe() {
     this.state = observable(this.initState());
     const setup = () => {
       this.render();
@@ -21,15 +21,27 @@ export class Component {
     observe(setup);
   }
 
-  initState() {
+  initState(): object {
     return {};
   }
-  template() {
+  template(): string {
     return '';
   }
-  render() {
+  render(): void {
     this.$target.innerHTML = this.template();
   }
-  setEvent() {}
-  mounted() {}
+  setEvent(): void {}
+  mounted(): void {}
+  setComponentEvent(eventType, selector, callback) {
+    const children = [...this.$target.querySelectorAll(selector)];
+    const isTarget = (target) => {
+      console.log('closer test : ', children);
+      return children.includes(target) || target.closest(selector);
+    };
+
+    this.$target.addEventListener(eventType, (e) => {
+      if (!isTarget(e.target)) return false;
+      callback(e);
+    });
+  }
 }
