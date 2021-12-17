@@ -46,30 +46,37 @@ module.exports = {
       },
       {
         test: /\.(jpe?g|png|gif|svg)$/,
-        dependency: { not: ['url'] },
         use: [
           {
-            loader: 'url-loader',
+            loader: 'file-loader',
             options: {
               name: 'image/[name].[ext]?[hash]',
-              limit: 8192,
+              publicPath: './dist/image/',
             },
           },
         ],
-        type: 'javascript/auto',
       },
     ],
   },
   resolve: {
-    modules: [path.join(__dirname, 'src'), 'node_modules'],
+    // modules: [path.join(__dirname, 'src'), 'node_modules'],
     extensions: ['.ts', '.js'],
     alias: {
-      '@': path.resolve(__dirname, 'src'),
+      '@core': path.resolve(__dirname, 'src/core'),
+      '@components': path.resolve(__dirname, 'src/components'),
+      '@pages': path.resolve(__dirname, 'src/pages'),
+      '@stylesheets': path.resolve(__dirname, 'src/stylesheets'),
     },
   },
   plugins: [
+    new MiniCssExtractPlugin({ filename: 'style.css' }),
     new HtmlWebpackPlugin({
       template: './src/index.html',
+      minify: {
+        collapseWhitespace: true,
+      },
+      hash: true,
+      inject: 'body',
     }),
   ],
 };

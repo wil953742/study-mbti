@@ -3,7 +3,14 @@
     "module": "ES6", // 모듈 형식 ES6
     "moduleResolution": "Node", // 모듈 해석 Node
     "esModuleInterop": true, // commonJS 모듈을 ES6로 import
-    "sourceMap": true // 디버깅 맵
+    "sourceMap": true, // 이걸 해야 webpack sourceMap tool 활성화 가능
+    "baseUrl": "./",
+    "paths": {
+      "@core/*": ["src/core/*"],
+      "@components/*": ["src/components/*"],
+      "@pages/*": ["src/pages/*"],
+      "@stylesheets/*": ["src/stylesheets/*"]
+    }
   },
   "include": ["src/**/*.ts"]
 }
