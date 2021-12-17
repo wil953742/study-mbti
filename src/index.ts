@@ -1,3 +1,7 @@
+import App from '@pages/App';
+import './style.scss';
+
 window.addEventListener('DOMContentLoaded', () => {
-  const $app = document.querySelector('#app');
+  const $root = document.querySelector('#root');
+  new App($root);
 });
