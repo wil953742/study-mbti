@@ -47,7 +47,9 @@ export default class App extends Component {
   }
 
   mounted(): void {
-    const $app: Element = this.$target.querySelector('.app');
+    const $app: Element | null = this.$target.querySelector('.app');
+    if (!$app) throw new Error("Can't get a app element");
+
     const { mainPath } = this.state;
     switch (mainPath) {
       case '':

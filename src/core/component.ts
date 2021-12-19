@@ -2,8 +2,8 @@ import { observe, observable } from './Observer';
 
 export default class Component {
   protected $target;
-  protected props;
-  protected state;
+  protected props: any;
+  protected state: any;
 
   constructor($target: Element, props = null) {
     this.$target = $target;
@@ -32,16 +32,4 @@ export default class Component {
   }
   setEvent(): void {}
   mounted(): void {}
-  setComponentEvent(eventType, selector, callback) {
-    const children = [...this.$target.querySelectorAll(selector)];
-    const isTarget = (target) => {
-      console.log('closer test : ', children);
-      return children.includes(target) || target.closest(selector);
-    };
-
-    this.$target.addEventListener(eventType, (e) => {
-      if (!isTarget(e.target)) return false;
-      callback(e);
-    });
-  }
 }
