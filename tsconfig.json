@@ -4,6 +4,8 @@
     "moduleResolution": "Node", // 모듈 해석 Node
     "esModuleInterop": true, // commonJS 모듈을 ES6로 import
     "sourceMap": true, // 이걸 해야 webpack sourceMap tool 활성화 가능
+    "noImplicitAny": true,
+    "strictNullChecks": true,
     "baseUrl": "./",
     "paths": {
       "@core/*": ["src/core/*"],
