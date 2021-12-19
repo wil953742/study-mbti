@@ -1,10 +1,10 @@
 import Component from '@core/Component';
 import './style.scss';
 
-import Content from '@components/Content';
-import Progress from '@components/Progress';
+import Content from '@components/content';
+import Progress from '@components/progress';
 
-export default class Main extends Component {
+export default class Test extends Component {
   initState(): object {
     return {
       questionNumber: 0,
