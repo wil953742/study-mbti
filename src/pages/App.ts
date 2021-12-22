@@ -28,29 +28,29 @@ export default class App extends Component {
   }
 
   mounted(): void {
-    const route = store.getState('route');
     const $app: Element = $(this.$target, '.app');
+    const route = store.getState('route');
     const { mainPath, subPath } = route;
     switch (mainPath) {
       case 'home':
         // history.replaceState({ data: 'home' }, 'homepage', '/home');
-        new Home($app, this.state);
+        new Home($app);
         break;
       case 'test':
         history.pushState({ data: 'test' }, 'testpage', '/test');
-        new Test($app, this.state);
+        new Test($app);
         break;
       case 'loading':
         history.pushState({ data: 'loading' }, 'loadingpage', '/loading');
-        new Loading($app, this.state);
+        new Loading($app);
         break;
       case 'type':
         history.pushState({ data: 'type' }, 'typepage', '/type');
-        new Type($app, this.state);
+        new Type($app);
         break;
       default:
         history.replaceState({ data: 'home' }, 'homepage', '/home');
-        new Home($app, this.state);
+        new Home($app);
         break;
     }
   }

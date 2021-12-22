@@ -1,6 +1,8 @@
 import Component from '@core/component';
 import './style.scss';
 import { $ } from '@util/query-selector';
+import { store } from '@core/store';
+import { setRouteAction } from '@core/action';
 
 import MainButton from '@components/main-button';
 
@@ -16,7 +18,8 @@ export default class Home extends Component {
     const $mainStart: Element = $(this.$target, '.main-start');
 
     const handleStart = (e: Event) => {
-      this.props.mainPath = 'test';
+      const [mainPath, subPath] = ['test', ''];
+      store.dispatch(setRouteAction(mainPath, subPath));
     };
 
     $mainStart.addEventListener('click', handleStart);
