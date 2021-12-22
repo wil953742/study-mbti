@@ -1,15 +1,3 @@
-interface Fn {
-  (): void;
-}
-
-interface ObserverMap<T> {
-  [key: string]: T;
-}
-
-interface Object {
-  [key: string]: any;
-}
-
 let currentFn: Fn = () => {};
 
 export const observe = (fn: Fn): void => {
@@ -18,10 +6,10 @@ export const observe = (fn: Fn): void => {
   currentFn = () => {};
 };
 
-export const observable = (obj: object): object => {
+export const observable = (obj: Object): Object => {
   const observerMap: ObserverMap<Set<Fn>> = {};
 
-  const state: object = new Proxy(obj, {
+  const state = new Proxy(obj, {
     get: (obj: Object, prop: string) => {
       observerMap[prop] = observerMap[prop] || new Set<Fn>();
       if (currentFn) observerMap[prop].add(currentFn);

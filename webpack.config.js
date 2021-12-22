@@ -63,6 +63,7 @@ module.exports = {
     extensions: ['.ts', '.js'],
     alias: {
       '@core': path.resolve(__dirname, 'src/core'),
+      '@util': path.resolve(__dirname, 'src/util'),
       '@components': path.resolve(__dirname, 'src/components'),
       '@pages': path.resolve(__dirname, 'src/pages'),
       '@stylesheets': path.resolve(__dirname, 'src/stylesheets'),

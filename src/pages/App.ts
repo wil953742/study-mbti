@@ -3,6 +3,7 @@ import Component from '@core/Component';
 import Home from './home';
 import Test from './test';
 import Type from './type';
+import Loading from './loading';
 
 type MBTI =
   | 'ISTP'
@@ -29,7 +30,7 @@ interface Path {
 
 export default class App extends Component {
   isValidPath(path: string): boolean {
-    const validPath = ['home', 'test', 'type'];
+    const validPath = ['home', 'test', 'loading', 'type'];
     return validPath.includes(path);
   }
 
@@ -61,6 +62,9 @@ export default class App extends Component {
       case 'test':
         //history replace 넣기
         new Test($app, this.state);
+        break;
+      case 'loading':
+        new Loading($app, this.state);
         break;
       case 'type':
         //여기도 다 history replace 하는걸 둬야 겠는걸?

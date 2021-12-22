@@ -1,11 +1,11 @@
-import { observe, observable } from './Observer';
+import { observe, observable } from './observer';
 
 export default class Component {
   protected $target;
   protected props: any;
   protected state: any;
 
-  constructor($target: Element, props = null) {
+  constructor($target: Element, props: any = null) {
     this.$target = $target;
     this.props = props;
     this.subscribe();
@@ -21,7 +21,7 @@ export default class Component {
     observe(setup);
   }
 
-  initState(): object {
+  initState(): Object {
     return {};
   }
   template(): string {
