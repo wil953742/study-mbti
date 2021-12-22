@@ -20,6 +20,7 @@
   - Jest로 테스트 코드를 작성하며 구현하기
   - Set Detail Options of Webpack Module
   - SEO 중, 내부 요소 최적화
+  - AWS 랑 친해지기...
   - Deploy with Nginx on Docker and apply SSL certificate
   - SSL 인증서 자동 갱신 crontab 코드 작성하기
   - Font, Image 압축 최적화
