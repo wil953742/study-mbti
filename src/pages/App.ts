@@ -1,48 +1,26 @@
-import Component from '@core/Component';
+import Component from '@core/component';
+import { $ } from '@util/query-selector';
+import { store } from '@core/store';
+import { setRouteAction } from '@core/action';
 
 import Home from './home';
 import Test from './test';
 import Type from './type';
 import Loading from './loading';
 
-type MBTI =
-  | 'ISTP'
-  | 'ISTJ'
-  | 'INTP'
-  | 'ESTP'
-  | 'ESTJ'
-  | 'ENTP'
-  | 'INTJ'
-  | 'ENTJ'
-  | 'ENFP'
-  | 'ISFP'
-  | 'ESFP'
-  | 'ESFJ'
-  | 'INFP'
-  | 'ISFJ'
-  | 'ENFJ'
-  | 'INFJ';
+const isValidPath = (path: string): boolean => {
+  const validPath = ['home', 'test', 'loading', 'type'];
+  return validPath.includes(path);
+};
 
-interface Path {
-  mainPath: string;
-  subPath: string;
-}
+let [mainPath, subPath] = window.location.pathname.split('/');
+[mainPath, subPath] = isValidPath(mainPath)
+  ? [mainPath, subPath]
+  : ['home', ''];
+
+store.dispatch(setRouteAction(mainPath, subPath));
 
 export default class App extends Component {
-  isValidPath(path: string): boolean {
-    const validPath = ['home', 'test', 'loading', 'type'];
-    return validPath.includes(path);
-  }
-
-  initState(): object {
-    const pathName: string = window.location.pathname;
-    const pathNameList: string[] = pathName.split('/');
-    const path: Path = { mainPath: pathNameList[0], subPath: pathNameList[1] };
-    return this.isValidPath(path.mainPath)
-      ? { path }
-      : { mainPath: 'home', subPath: '' };
-  }
-
   template(): string {
     return `
       <div class="app"></div>
@@ -50,28 +28,28 @@ export default class App extends Component {
   }
 
   mounted(): void {
-    const $app: Element | null = this.$target.querySelector('.app');
-    if (!$app) throw new Error("Can't get an app element");
-
-    const { mainPath } = this.state;
+    const route = store.getState('route');
+    const $app: Element = $(this.$target, '.app');
+    const { mainPath, subPath } = route;
     switch (mainPath) {
       case 'home':
-        //여기도 다 history replace 하는걸 둬야 겠는걸?
+        // history.replaceState({ data: 'home' }, 'homepage', '/home');
         new Home($app, this.state);
         break;
       case 'test':
-        //history replace 넣기
+        history.pushState({ data: 'test' }, 'testpage', '/test');
         new Test($app, this.state);
         break;
       case 'loading':
+        history.pushState({ data: 'loading' }, 'loadingpage', '/loading');
         new Loading($app, this.state);
         break;
       case 'type':
-        //여기도 다 history replace 하는걸 둬야 겠는걸?
+        history.pushState({ data: 'type' }, 'typepage', '/type');
         new Type($app, this.state);
         break;
       default:
-        //위에서 리다이렉션하긴 함.. 그래도 혹시 모르니까? 얘도 replace
+        history.replaceState({ data: 'home' }, 'homepage', '/home');
         new Home($app, this.state);
         break;
     }

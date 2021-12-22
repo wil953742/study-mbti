@@ -1,5 +1,6 @@
-import Component from '@core/Component';
+import Component from '@core/component';
 import './style.scss';
+import { $ } from '@util/query-selector';
 
 import Content from '@components/content';
 import Progress from '@components/progress';
@@ -19,12 +20,8 @@ export default class Test extends Component {
   }
 
   mounted(): void {
-    const $content: Element | null =
-      this.$target.querySelector('.main-content');
-    const $progress: Element | null =
-      this.$target.querySelector('.main-progress');
-    if (!$content || !$progress) throw new Error("Can't get $content element");
-
+    const $content: Element = $(this.$target, '.main-content');
+    const $progress: Element = $(this.$target, '.main-progress');
     new Content($content);
     new Progress($progress);
   }
