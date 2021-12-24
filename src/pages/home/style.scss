@@ -1,0 +1,9 @@
+@import '@stylesheets/mixin.scss';
+
+.home-main-title {
+  @include notosans($font-size: var(--fontSize-4), $font-weight: 700);
+}
+
+.home-sub-title {
+  @include notosans($font-size: var(--fontSize-2));
+}

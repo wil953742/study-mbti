@@ -1,0 +1,11 @@
+@import '@stylesheets/mixin.scss';
+
+.app {
+  @include flexbox(
+    $direction: column,
+    $justify-content: center,
+    $align-items: center
+  );
+
+  width: 400px;
+}

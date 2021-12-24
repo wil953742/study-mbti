@@ -1,3 +1,16 @@
+@import './stylesheets/font.scss';
 @import './stylesheets/root.scss';
-@import './stylesheets/mixin.scss';
 @import './stylesheets/reset.scss';
+@import './stylesheets/mixin.scss';
+
+html {
+  @include notosans();
+}
+
+main {
+  @include flexbox(
+    $direction: column,
+    $justify-content: center,
+    $align-items: center
+  );
+}
