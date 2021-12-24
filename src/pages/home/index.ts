@@ -9,13 +9,17 @@ import MainButton from '@components/main-button';
 export default class Home extends Component {
   template(): string {
     return `
-      <section class="img">메인 이미지</section>
-      <section class="main-start"></section>
+      <section class="home-title-section">
+        <p class="home-main-title">팩폭주의 공부 유형 테스트</p>
+        <p class="home-sub-title">나에게 가장 적합한 공부법은!?</p>
+      </section>
+      <section class="home-img-section">메인 이미지</section>
+      <section class="home-start-section"></section>
     `;
   }
 
   setEvent(): void {
-    const $mainStart: Element = $(this.$target, '.main-start');
+    const $mainStart: Element = $(this.$target, '.home-start-section');
 
     const handleStart = (e: Event) => {
       const [mainPath, subPath] = ['test', ''];
@@ -26,7 +30,7 @@ export default class Home extends Component {
   }
 
   mounted(): void {
-    const $mainStart: Element = $(this.$target, '.main-start');
-    new MainButton($mainStart, '시작하기');
+    const $mainStart: Element = $(this.$target, '.home-start-section');
+    new MainButton($mainStart, { value: '시작하기' });
   }
 }

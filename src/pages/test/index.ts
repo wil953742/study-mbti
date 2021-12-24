@@ -2,7 +2,7 @@ import Component from '@core/component';
 import './style.scss';
 import { $ } from '@util/query-selector';
 
-import Content from '@components/content';
+import Content from '@components/Content';
 import Progress from '@components/progress';
 
 export default class Test extends Component {
@@ -14,15 +14,17 @@ export default class Test extends Component {
 
   template(): string {
     return `
-        <section class="main-content">내용 섹션</section>
-        <section class="main-progress">진행도 섹션</section>
+        <section class="test-content-section"></section>
+        <section class="test-progress-section"></section>
       `;
   }
 
+  setEvent(): void {}
+
   mounted(): void {
-    const $content: Element = $(this.$target, '.main-content');
-    const $progress: Element = $(this.$target, '.main-progress');
-    new Content($content);
+    const $content: Element = $(this.$target, '.test-content-section');
+    const $progress: Element = $(this.$target, '.test-progress-section');
+    new Content($content, { value: this.state });
     new Progress($progress);
   }
 }

@@ -5,7 +5,7 @@ export default class Component {
   protected props: any;
   protected state: any;
 
-  constructor($target: Element, props: any = null) {
+  constructor($target: Element, props: Props = { value: null }) {
     this.$target = $target;
     this.props = props;
     this.subscribe();
