@@ -1,0 +1,14 @@
+@import '@stylesheets/mixin.scss';
+
+.test-content-section {
+  @include flexbox(
+    $direction: row,
+    $justify-content: flex-start,
+    $align-items: center
+  );
+  transition: margin-left 0.4s ease-in-out;
+}
+
+.test-content {
+  width: var(--max-width);
+}

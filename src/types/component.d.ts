@@ -1,3 +1,4 @@
 interface Props {
-  value: Object | string | number | null;
+  state?: Object | string | number | null;
+  value?: Object | string | number | null;
 }
