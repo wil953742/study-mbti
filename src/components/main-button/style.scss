@@ -1,0 +1,16 @@
+.main-button {
+  width: 284px;
+  height: 50px;
+  border: none;
+  border-radius: 25px;
+  color: var(--color-white);
+  background-color: var(--color-text);
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+}
