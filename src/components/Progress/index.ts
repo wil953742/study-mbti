@@ -10,17 +10,4 @@ export default class Progress extends Component {
         <div class="progress-bar">진행도 바</div>
       `;
   }
-
-  // setEvent(): void {
-  //   const $backBtn = $(this.$target, '.progress-back-btn');
-  //   const backHandler = (e: Event) => {
-  //     const { state } = this.props;
-  //     state.questionNumber =
-  //       state.questionNumber > 1
-  //         ? state.questionNumber - 1
-  //         : state.questionNumber;
-  //   };
-
-  //   $backBtn.addEventListener('click', backHandler);
-  // }
 }

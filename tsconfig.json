@@ -14,7 +14,8 @@
       "@components/*": ["src/components/*"],
       "@pages/*": ["src/pages/*"],
       "@stylesheets/*": ["src/stylesheets/*"],
-      "@util/*": ["src/util/*"]
+      "@util/*": ["src/util/*"],
+      "@assets/*": ["src/assets/*"]
     }
   },
   "include": ["src/**/*.ts"]
