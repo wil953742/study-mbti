@@ -1,6 +1,6 @@
 :root {
   --color-white: #ffffff;
-  --color-text: #222222;
+  --color-text: #333333;
   --fontSize-0: 0.85rem;
   --fontSize-1: 1rem;
   --fontSize-2: 1.2rem;
@@ -9,4 +9,12 @@
   --fontSize-5: 2rem;
   --fontSize-6: 2.488rem;
   --fontSize-7: 2.986rem;
+
+  --fontWeight-1: 100;
+  --fontWeight-3: 300;
+  --fontWeight-5: 500;
+  --fontWeight-7: 700;
+  --fontWeight-9: 900;
+
+  --max-width: 440px;
 }

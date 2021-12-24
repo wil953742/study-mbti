@@ -4,8 +4,9 @@
   @include flexbox(
     $direction: column,
     $justify-content: center,
-    $align-items: center
+    $align-items: flex-start
   );
 
-  width: 400px;
+  width: var(--max-width);
+  overflow: hidden;
 }
