@@ -1,6 +1,17 @@
-@mixin flexBox($direction, $justify-content, $align-items) {
+@mixin flexbox(
+  $direction: row,
+  $justify-content: flex-start,
+  $align-items: flex-start
+) {
   display: flex;
   flex-direction: $direction;
   justify-content: $justify-content;
   align-items: $align-items;
+}
+
+@mixin notosans($font-size: 1rem, $font-weight: normal) {
+  font-family: Noto Sans KR;
+  font-style: normal;
+  font-size: $font-size;
+  font-weight: $font-weight;
 }
