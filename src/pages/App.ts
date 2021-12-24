@@ -29,7 +29,7 @@ export default class App extends Component {
   }
 
   mounted(): void {
-    const $app: Element = $(this.$target, '.app');
+    const $app: HTMLElement = $(this.$target, '.app');
     const route = store.getState('route');
     const { mainPath, subPath } = route;
     switch (mainPath) {

@@ -19,7 +19,7 @@ export default class Home extends Component {
   }
 
   setEvent(): void {
-    const $mainStart: Element = $(this.$target, '.home-start-section');
+    const $mainStart: HTMLElement = $(this.$target, '.home-start-section');
 
     const handleStart = (e: Event) => {
       const [mainPath, subPath] = ['test', ''];
@@ -30,7 +30,7 @@ export default class Home extends Component {
   }
 
   mounted(): void {
-    const $mainStart: Element = $(this.$target, '.home-start-section');
+    const $mainStart: HTMLElement = $(this.$target, '.home-start-section');
     new MainButton($mainStart, { value: '시작하기' });
   }
 }
