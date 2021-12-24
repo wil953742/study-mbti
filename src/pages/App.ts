@@ -1,4 +1,5 @@
 import Component from '@core/component';
+import './style.scss';
 import { $ } from '@util/query-selector';
 import { store } from '@core/store';
 import { setRouteAction } from '@core/action';
@@ -37,7 +38,7 @@ export default class App extends Component {
         new Home($app);
         break;
       case 'test':
-        history.pushState({ data: 'test' }, 'testpage', '/test');
+        // history.pushState({ data: 'test' }, 'testpage', '/test');
         new Test($app);
         break;
       case 'loading':
