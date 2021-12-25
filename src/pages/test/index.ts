@@ -13,6 +13,11 @@ const answerSheet = new Array(12).fill(null);
 let currentPage = 0;
 
 export default class Test extends Component {
+  initState(): Object {
+    currentPage = 0;
+    return {};
+  }
+
   template(): string {
     return `
       <section class="test-content-section" style="margin-left: 0px;">
