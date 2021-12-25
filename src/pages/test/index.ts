@@ -21,7 +21,7 @@ export default class Test extends Component {
   template(): string {
     return `
       <section class="test-loading" style="display:none">
-        <p>로딩중...</p>
+        <p>분석중...</p>
       </section>
       <section class="test-content-section" style="margin-left: 0px;">
         ${pages
