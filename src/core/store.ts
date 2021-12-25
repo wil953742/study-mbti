@@ -3,7 +3,7 @@ import { reducer } from './reducer';
 
 const initState = (): State => {
   return {
-    route: { mainPath: 'home', subPath: '' },
+    route: { mainPath: 'home', subPath: '', popState: false },
   };
 };
 

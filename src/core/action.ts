@@ -1,6 +1,10 @@
-export const setRouteAction = (mainPath: string, subPath: string): Action => ({
+export const setRouteAction = (
+  mainPath: string,
+  subPath: string,
+  popState: boolean
+): Action => ({
   type: 'SET_ROUTE',
-  payload: { mainPath, subPath },
+  payload: { mainPath, subPath, popState },
 });
 
 export const setResultAction = (answerSheet: string[]): Action => {
@@ -23,5 +27,5 @@ export const setResultAction = (answerSheet: string[]): Action => {
     .join('')
     .trim();
 
-  return setRouteAction('type', mbti);
+  return setRouteAction('type', mbti, false);
 };

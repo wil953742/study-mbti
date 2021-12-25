@@ -23,7 +23,7 @@ export default class Home extends Component {
 
     const handleStart = (e: Event) => {
       const [mainPath, subPath] = ['test', ''];
-      store.dispatch(setRouteAction(mainPath, subPath));
+      store.dispatch(setRouteAction(mainPath, subPath, false));
     };
 
     $mainStart.addEventListener('click', handleStart);

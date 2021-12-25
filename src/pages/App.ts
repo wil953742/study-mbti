@@ -9,17 +9,9 @@ import Test from './test';
 import Type from './type';
 import Loading from './loading';
 
-const isValidPath = (path: string): boolean => {
-  const validPath = ['home', 'test', 'loading', 'type'];
-  return validPath.includes(path);
-};
-
 let [mainPath, subPath] = window.location.pathname.split('/');
-[mainPath, subPath] = isValidPath(mainPath)
-  ? [mainPath, subPath]
-  : ['home', ''];
 
-store.dispatch(setRouteAction(mainPath, subPath));
+store.dispatch(setRouteAction(mainPath, subPath, false));
 
 export default class App extends Component {
   template(): string {
@@ -31,26 +23,35 @@ export default class App extends Component {
   mounted(): void {
     const $app: HTMLElement = $(this.$target, '.app');
     const route = store.getState('route');
-    const { mainPath, subPath } = route;
+    const { mainPath, subPath, popState } = route;
     switch (mainPath) {
       case 'home':
-        // history.replaceState({ data: 'home' }, 'homepage', '/home');
+        if (!popState)
+          history.pushState({ mainPath, subPath }, 'homepage', '/home');
         new Home($app);
         break;
       case 'test':
-        // history.pushState({ data: 'test' }, 'testpage', '/test');
+        if (!popState)
+          history.pushState({ mainPath, subPath }, 'testpage', '/test');
         new Test($app);
         break;
       case 'loading':
-        history.pushState({ data: 'loading' }, 'loadingpage', '/loading');
+        if (!popState)
+          history.pushState({ mainPath, subPath }, 'loadingpage', '/loading');
         new Loading($app);
         break;
       case 'type':
-        history.pushState({ data: 'type' }, 'typepage', '/type');
-        new Type($app);
+        const path = !subPath ? '/type' : `/type/${subPath}`;
+        if (!popState)
+          history.pushState({ mainPath, subPath }, 'typepage', path);
+        new Type($app, { value: subPath });
         break;
       default:
-        history.replaceState({ data: 'home' }, 'homepage', '/home');
+        history.replaceState(
+          { mainPath: 'home', subPath },
+          'homepage',
+          '/home'
+        );
         new Home($app);
         break;
     }

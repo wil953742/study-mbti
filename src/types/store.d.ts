@@ -1,6 +1,7 @@
 interface Route {
   mainPath: string;
   subPath: string;
+  popState: boolean;
 }
 
 interface Action {

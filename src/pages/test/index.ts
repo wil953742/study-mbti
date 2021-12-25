@@ -31,7 +31,7 @@ export default class Test extends Component {
     const routeHandler = (currentPage: number) => {
       currentPage >= 11
         ? store.dispatch(setResultAction(answerSheet))
-        : store.dispatch(setRouteAction('home', ''));
+        : store.dispatch(setRouteAction('home', '', false));
     };
 
     const answerHandler = (e: MouseEvent) => {

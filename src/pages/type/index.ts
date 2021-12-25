@@ -1,23 +1,23 @@
 import Component from '@core/component';
 import './style.scss';
 
-export default class Type extends Component {
-  initState(): object {
-    const { subPath } = this.props;
-    return { subPath };
-  }
+import { $ } from '@util/query-selector';
+import Overal from './overall';
+import Detail from './detail';
 
+export default class Type extends Component {
   template(): string {
     return `
-        <div class="type">타입 페이지</div>
+        <div class="type-page"></div>
       `;
   }
 
   mounted(): void {
-    const { subPath } = this.state;
+    const subPath = this.props.value;
+    const $typePage = $(this.$target, '.type-page');
 
-    // switch(subPath) {
-    //   case '':
-    // }
+    !subPath
+      ? new Overal($typePage)
+      : new Detail($typePage, { value: subPath });
   }
 }
