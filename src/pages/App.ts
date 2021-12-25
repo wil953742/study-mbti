@@ -7,7 +7,6 @@ import { setRouteAction } from '@core/action';
 import Home from './home';
 import Test from './test';
 import Type from './type';
-import Loading from './loading';
 
 let [mainPath, subPath] = window.location.pathname.split('/');
 
@@ -34,11 +33,6 @@ export default class App extends Component {
         if (!popState)
           history.pushState({ mainPath, subPath }, 'testpage', '/test');
         new Test($app);
-        break;
-      case 'loading':
-        if (!popState)
-          history.pushState({ mainPath, subPath }, 'loadingpage', '/loading');
-        new Loading($app);
         break;
       case 'type':
         const path = !subPath ? '/type' : `/type/${subPath}`;

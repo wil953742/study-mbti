@@ -20,6 +20,9 @@ export default class Test extends Component {
 
   template(): string {
     return `
+      <section class="test-loading" style="display:none">
+        <p>로딩중...</p>
+      </section>
       <section class="test-content-section" style="margin-left: 0px;">
         ${pages
           .map((page) => `<div class="test-content test${page}"></div>`)
@@ -33,9 +36,17 @@ export default class Test extends Component {
     const $content: HTMLElement = $(this.$target, '.test-content-section');
     const $progress: HTMLElement = $(this.$target, '.test-progress-section');
 
-    const routeHandler = (currentPage: number) => {
+    const resultHandler = (): void => {
+      const $testLoading = $(this.$target, '.test-loading');
+      $testLoading.style.display = 'block';
+      setTimeout(() => {
+        store.dispatch(setResultAction(answerSheet));
+      }, 1000);
+    };
+
+    const routeHandler = (currentPage: number): void => {
       currentPage >= 11
-        ? store.dispatch(setResultAction(answerSheet))
+        ? resultHandler()
         : store.dispatch(setRouteAction('home', '', false));
     };
 
