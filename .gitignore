@@ -3,6 +3,9 @@
 
 dist/
 assets/
+text/answer.ts
+text/question.ts
+text/result.ts
 
 ### Node ###
 # Logs

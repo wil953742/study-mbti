@@ -2,7 +2,7 @@ import Component from '@core/component';
 import './style.scss';
 import { $ } from '@util/query-selector';
 import { store } from '@core/store';
-import { setRouteAction } from '@core/action';
+import { setRouteAction, setResultAction } from '@core/action';
 import { ANSWER } from '@assets/text/answer';
 
 import Content from '@components/Content';
@@ -29,9 +29,8 @@ export default class Test extends Component {
     const $progress: HTMLElement = $(this.$target, '.test-progress-section');
 
     const routeHandler = (currentPage: number) => {
-      console.log(JSON.stringify(answerSheet));
       currentPage >= 11
-        ? store.dispatch(setRouteAction('type', ''))
+        ? store.dispatch(setResultAction(answerSheet))
         : store.dispatch(setRouteAction('home', ''));
     };
 
@@ -39,7 +38,6 @@ export default class Test extends Component {
       const target = e.target as HTMLButtonElement;
       if (target.classList.contains('answer-btn')) {
         const type = target.dataset.type;
-        console.log(type);
         if (!type) throw new Error("Can't get an data-type in Option Button");
         answerSheet[currentPage] = ANSWER[currentPage + 1][type];
         currentPage >= 11
@@ -51,8 +49,6 @@ export default class Test extends Component {
     const returnHandler = (e: MouseEvent) => {
       const target = e.target as HTMLButtonElement;
       if (target.classList.contains('return-btn')) {
-        const type = target.dataset.type;
-        if (!type) throw new Error("Can't get an data-type in Option Button");
         answerSheet[currentPage] = null;
         currentPage <= 0
           ? routeHandler(currentPage)

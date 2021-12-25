@@ -1,4 +1,4 @@
-type MBTI =
+type Mbti =
   | 'ISTP'
   | 'ISTJ'
   | 'INTP'
@@ -15,3 +15,5 @@ type MBTI =
   | 'ISFJ'
   | 'ENFJ'
   | 'INFJ';
+
+type MbtiElement = 'E' | 'I' | 'N' | 'S' | 'T' | 'F' | 'P' | 'J';
