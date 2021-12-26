@@ -4,9 +4,10 @@
   @include flexbox(
     $direction: column,
     $justify-content: center,
-    $align-items: flex-start
+    $align-items: center
   );
 
-  width: var(--max-width);
-  overflow: hidden;
+  width: 100%;
+  padding: var(--fontSize-5) 0;
+  max-width: var(--max-width);
 }

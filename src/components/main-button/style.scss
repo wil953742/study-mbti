@@ -1,4 +1,7 @@
+@import '@stylesheets/mixin.scss';
+
 .main-button {
+  @include notosans($font-size: var(--fontSize-2));
   width: 284px;
   height: 50px;
   border: none;
@@ -8,6 +11,8 @@
 
   &:hover {
     cursor: pointer;
+    color: var(--color-text);
+    background-color: var(--color-orange);
   }
 
   &:active {

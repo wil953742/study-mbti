@@ -10,10 +10,11 @@ export default class Home extends Component {
   template(): string {
     return `
       <section class="home-title-section">
-        <p class="home-main-title">팩폭주의 공부 유형 테스트</p>
-        <p class="home-sub-title">나에게 가장 적합한 공부법은!?</p>
+        <p class="home-title-deco">팩폭주의~! </p>
+        <p class="home-main-title">공부 유형 테스트</p>
+        <p class="home-sub-title">나에게 꼭 맞는 공부 방법은?</p>
       </section>
-      <section class="home-img-section">메인 이미지</section>
+      <section class="home-img-section"></section>
       <section class="home-start-section"></section>
     `;
   }
@@ -31,6 +32,6 @@ export default class Home extends Component {
 
   mounted(): void {
     const $mainStart: HTMLElement = $(this.$target, '.home-start-section');
-    new MainButton($mainStart, { value: '시작하기' });
+    new MainButton($mainStart, { value: '테스트 시작하기' });
   }
 }
