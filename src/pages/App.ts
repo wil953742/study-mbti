@@ -15,30 +15,30 @@ store.dispatch(setRouteAction(mainPath, subPath, false));
 export default class App extends Component {
   template(): string {
     return `
-      <div class="app"></div>
+      <main class="main"></main>
     `;
   }
 
   mounted(): void {
-    const $app: HTMLElement = $(this.$target, '.app');
+    const $main: HTMLElement = $(this.$target, '.main');
     const route = store.getState('route');
     const { mainPath, subPath, popState } = route;
     switch (mainPath) {
       case 'home':
         if (!popState)
           history.pushState({ mainPath, subPath }, 'homepage', '/home');
-        new Home($app);
+        new Home($main);
         break;
       case 'test':
         if (!popState)
           history.pushState({ mainPath, subPath }, 'testpage', '/test');
-        new Test($app);
+        new Test($main);
         break;
       case 'type':
         const path = !subPath ? '/type' : `/type/${subPath}`;
         if (!popState)
           history.pushState({ mainPath, subPath }, 'typepage', path);
-        new Type($app, { value: subPath });
+        new Type($main, { value: subPath });
         break;
       default:
         history.replaceState(
@@ -46,7 +46,7 @@ export default class App extends Component {
           'homepage',
           '/home'
         );
-        new Home($app);
+        new Home($main);
         break;
     }
   }

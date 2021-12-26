@@ -4,9 +4,9 @@ import { store } from '@core/store';
 import { setRouteAction } from '@core/action';
 
 window.addEventListener('DOMContentLoaded', () => {
-  const $root: HTMLElement | null = document.querySelector('#main');
-  if (!$root) throw new Error("Can't get $root Element");
-  new App($root);
+  const $app: HTMLElement | null = document.querySelector('#app');
+  if (!$app) throw new Error("Can't get $root Element");
+  new App($app);
 });
 
 window.onpopstate = (e: PopStateEvent) => {

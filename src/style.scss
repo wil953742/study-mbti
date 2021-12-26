@@ -8,26 +8,7 @@ html {
   color: var(--color-text);
 }
 
-main {
-  height: 500px;
-}
-
-main,
-footer {
-  @include flexbox(
-    $direction: column,
-    $justify-content: center,
-    $align-items: center
-  );
-}
-
-.footer-expression {
-  margin: 10px 0;
-}
-
-.footer-contact {
-  @include notosans(
-    $font-size: var(--fontSize-0),
-    $font-weight: var(--fontWeight-3)
-  );
+#app {
+  width: 100%;
+  @include flexbox($justify-content: center);
 }
