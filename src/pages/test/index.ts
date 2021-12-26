@@ -20,22 +20,25 @@ export default class Test extends Component {
 
   template(): string {
     return `
-      <section class="test-loading" style="display:none">
-        <p>분석중...</p>
-      </section>
-      <section class="test-content-section" style="margin-left: 0px;">
-        ${pages
-          .map((page) => `<div class="test-content test${page}"></div>`)
-          .join('\n')}
-      </section>
-      <section class="test-progress-section"></section>
+        <section class="test-loading" style="display:none">
+          <p class="temp">분석중...</p>
+        </section>
+        <div class="test-container">
+          <section class="test-content-section" style="margin-left: 0px;">
+            ${pages
+              .map((page) => `<div class="test-content test${page}"></div>`)
+              .join('\n')}
+          </section>
+        </div>
+        <section class="test-progress-section"></section>
       `;
   }
 
   setEvent(): void {
     const $content: HTMLElement = $(this.$target, '.test-content-section');
     const $progress: HTMLElement = $(this.$target, '.test-progress-section');
-
+    const $progressBar: HTMLElement = $(this.$target, '.progress-bar');
+    const $progressPage: HTMLElement = $(this.$target, '.progress-page');
     const resultHandler = (): void => {
       const $testLoading = $(this.$target, '.test-loading');
       $testLoading.style.display = 'block';
@@ -59,6 +62,9 @@ export default class Test extends Component {
         currentPage >= 11
           ? routeHandler(currentPage)
           : ($content.style.marginLeft = `-${440 * ++currentPage}px`);
+
+        $progressBar.style.width = `${(currentPage + 1) * 8.4}%`;
+        $progressPage.innerText = `${currentPage + 1} / 12`;
       }
     };
 
@@ -69,6 +75,9 @@ export default class Test extends Component {
         currentPage <= 0
           ? routeHandler(currentPage)
           : ($content.style.marginLeft = `-${440 * --currentPage}px`);
+
+        $progressBar.style.width = `${(currentPage + 1) * 37}px`;
+        $progressPage.innerText = `${currentPage + 1} / 12`;
       }
     };
 

@@ -15,8 +15,8 @@ export default class Component {
     this.state = observable(this.initState());
     const setup = () => {
       this.render();
-      this.setEvent();
       this.mounted();
+      this.setEvent();
     };
     observe(setup);
   }
