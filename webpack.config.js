@@ -46,15 +46,17 @@ module.exports = {
       },
       {
         test: /\.(jpe?g|png|gif|svg)$/,
+        dependency: { not: ['url'] },
         use: [
           {
-            loader: 'file-loader',
+            loader: 'url-loader',
             options: {
               name: 'image/[name].[ext]?[hash]',
-              publicPath: './dist/image/',
+              limit: 8192,
             },
           },
         ],
+        type: 'javascript/auto',
       },
       // {
       //   test: /\.(woff|woff2|eot|ttf|otf)$/,
