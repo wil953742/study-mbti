@@ -1,0 +1,6 @@
+@import '@stylesheets/mixin.scss';
+
+.type-page {
+  @include flexbox($direction: column, $align-items: center);
+  width: 100%;
+}

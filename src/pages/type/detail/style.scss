@@ -1,0 +1,27 @@
+@import '@stylesheets/mixin.scss';
+
+.result-title {
+  @include notosans(
+    $font-size: var(--fontSize-4),
+    $font-weight: var(--fontWeight-7)
+  );
+}
+
+.result-img {
+  margin: 20px 0;
+  width: 300px;
+  height: 300px;
+}
+
+.result-hashtag {
+  @include notosans(
+    $font-size: var(--fontSize-2),
+    $font-weight: var(--fontWeight-7)
+  );
+
+  margin-bottom: 20px;
+}
+
+.result-strategy {
+  @include notosans($font-weight: var(--fontWeight-3));
+}

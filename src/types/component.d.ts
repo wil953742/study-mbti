@@ -16,3 +16,11 @@ interface Answer {
     [answer: string]: string;
   };
 }
+
+interface Result {
+  [mbti: string]: {
+    title: string;
+    hashtag: string;
+    strategy: string;
+  };
+}
