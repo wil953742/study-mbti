@@ -10,7 +10,7 @@ export default class Content extends Component {
     const { question, optionA, optionB } = QUESTION[page];
 
     return `
-      <div>${this.props.value}</div>
+      <p class="question-number">Q${this.props.value}</p>
       <article class="content-question">${question}</article>
       <section class="content-btn-section">
         <button class="answer-btn" data-type="selectA">${optionA}</button>
