@@ -6,7 +6,7 @@ import { setRouteAction, setResultAction } from '@core/action';
 import { ANSWER } from '@assets/text/answer';
 import loadingImg from '@assets/images/temp-loading.png';
 
-import Content from '@components/Content';
+import Content from '@components/content';
 import Progress from '@components/progress';
 
 const pages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
