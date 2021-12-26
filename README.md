@@ -11,14 +11,14 @@
 - 기술적 도전 목표
 
   - [ ] PC와 모바일에 모두 자연스러운 반응형 UI를 구현
-  - [ ] transition 과 svg 를 활용한 가벼운 애니메이션 구현
-  - [ ] CSS responsive unit 적용, :root에 전역변수 선언
+  - [x] transition 과 svg 를 활용한 가벼운 애니메이션 구현
+  - [x] CSS responsive unit 적용, :root에 전역변수 선언
   - [x] Proxy object 를 활용한 옵저버 패턴 구현
   - [x] Vanilla TypeScript로 컴포넌트와 중앙상태관리 구현
   - [x] History API, URL path, NGINX 옵션으로 URL 접근관리 및 라우팅
   - [x] TypeScript InplicitAny, NullCheck 등, 엄격한 TS 문법 준수
   - [ ] Jest로 테스트 코드를 작성하며 구현하기
-  - [ ] Set Detail Options of Webpack Module
+  - [x] Set Detail Options of Webpack Module
   - [ ] SEO 중, 내부 요소 최적화
   - [ ] AWS 랑 친해지기...
   - [ ] Deploy with Nginx on Docker and apply SSL certificate
