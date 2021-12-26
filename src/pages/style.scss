@@ -1,6 +1,6 @@
 @import '@stylesheets/mixin.scss';
 
-.app {
+.main {
   @include flexbox(
     $direction: column,
     $justify-content: center,
@@ -8,6 +8,6 @@
   );
 
   width: 100%;
-  padding: var(--fontSize-5) 0;
+  padding: var(--fontSize-1) 10px;
   max-width: var(--max-width);
 }

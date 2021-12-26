@@ -4,36 +4,34 @@
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -100%);
+  transform: translate(-50%, -50%);
+  z-index: 1;
 
-  .temp {
-    @include notosans(
-      $font-size: var(--fontSize-5),
-      $font-weight: var(--fontWeight-7)
-    );
-    @include flexbox($justify-content: center, $align-items: center);
-    width: 150px;
-    height: 150px;
-    color: var(--color-text);
-    background-color: var(--color-orange);
+  .loading-img {
+    width: 180px;
+    height: 180px;
   }
-}
-
-.test-content-section {
-  @include flexbox($align-items: center);
-  transition: margin-left 0.4s ease-in-out;
 }
 
 .test-container {
   @include flexbox($align-items: center);
-  width: 440px;
+  width: 100%;
+  min-width: var(--min-width);
+  max-width: var(--max-width);
   overflow: hidden;
 
+  .test-content-section {
+    @include flexbox($align-items: center);
+    transition: margin-left 0.4s ease-in-out;
+  }
+
   .test-content {
-    width: var(--max-width);
+    width: 100vw;
+    max-width: 440px;
+    min-width: 30px;
   }
 }
 
 .test-progress-section {
-  width: var(--max-width);
+  width: 100%;
 }

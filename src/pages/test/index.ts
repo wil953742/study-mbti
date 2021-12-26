@@ -4,6 +4,7 @@ import { $ } from '@util/query-selector';
 import { store } from '@core/store';
 import { setRouteAction, setResultAction } from '@core/action';
 import { ANSWER } from '@assets/text/answer';
+import loadingImg from '@assets/images/temp-loading.png';
 
 import Content from '@components/Content';
 import Progress from '@components/progress';
@@ -21,7 +22,7 @@ export default class Test extends Component {
   template(): string {
     return `
         <section class="test-loading" style="display:none">
-          <p class="temp">분석중...</p>
+          <img src="${loadingImg}" alt="loading-image" class="loading-img" />
         </section>
         <div class="test-container">
           <section class="test-content-section" style="margin-left: 0px;">
@@ -61,7 +62,7 @@ export default class Test extends Component {
         answerSheet[currentPage] = ANSWER[currentPage + 1][type];
         currentPage >= 11
           ? routeHandler(currentPage)
-          : ($content.style.marginLeft = `-${440 * ++currentPage}px`);
+          : ($content.style.marginLeft = `-${100 * ++currentPage}%`);
 
         $progressBar.style.width = `${(currentPage + 1) * 8.4}%`;
         $progressPage.innerText = `${currentPage + 1} / 12`;
@@ -74,7 +75,7 @@ export default class Test extends Component {
         answerSheet[currentPage] = null;
         currentPage <= 0
           ? routeHandler(currentPage)
-          : ($content.style.marginLeft = `-${440 * --currentPage}px`);
+          : ($content.style.marginLeft = `-${100 * --currentPage}%`);
 
         $progressBar.style.width = `${(currentPage + 1) * 37}px`;
         $progressPage.innerText = `${currentPage + 1} / 12`;

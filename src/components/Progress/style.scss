@@ -2,6 +2,8 @@
 
 .progress-bar-section {
   position: relative;
+  width: 100%;
+
   .progress-bar,
   .background-bar {
     position: absolute;
@@ -16,7 +18,7 @@
   }
 
   .progress-bar {
-    width: 37px;
+    width: 8.4%;
     background-color: var(--color-orange);
     transition: width 0.2s ease-in-out;
   }
@@ -24,7 +26,6 @@
 
 .progress-info-section {
   width: 100%;
-  min-width: 300px;
   margin-top: 10px;
   @include flexbox($justify-content: space-between);
 

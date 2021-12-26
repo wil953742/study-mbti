@@ -1,5 +1,13 @@
 @import '@stylesheets/mixin.scss';
 
+.home-logo {
+  margin-bottom: var(--fontSize-5);
+
+  .logo-img {
+    width: 120px;
+  }
+}
+
 .home-title-section {
   position: relative;
 
@@ -9,28 +17,45 @@
       $font-weight: var(--fontWeight-7)
     );
     position: absolute;
-    left: -40px;
-    top: -10px;
-    transform: rotate(-12deg);
+    left: -30px;
+    top: calc(-1 * var(--fontSize-0));
+    transform: rotate(-13deg);
   }
 
   .home-main-title {
     @include notosans(
-      $font-size: var(--fontSize-4),
+      $font-size: var(--fontSize-5),
       $font-weight: var(--fontWeight-7)
     );
-    margin: 10px 0;
+    margin: var(--fontSize-0) 0;
   }
 
   .home-sub-title {
-    @include notosans($font-size: var(--fontSize-1));
+    @include notosans($font-size: var(--fontSize-2));
     text-align: center;
   }
 }
 
 .home-img-section {
-  width: 300px;
-  height: 300px;
-  margin: 10px 0;
-  border: solid 1px black;
+  width: var(--min-width);
+  height: var(--min-width);
+  margin: var(--fontSize-2) 0;
+}
+
+.home-start-section {
+  margin-bottom: var(--fontSize-1);
+}
+
+footer {
+  .footer-copyright {
+    margin: var(--fontSize-0) 0;
+  }
+
+  .footer-contact {
+    text-align: center;
+    @include notosans(
+      $font-size: var(--fontSize-0),
+      $font-weight: var(--fontWeight-3)
+    );
+  }
 }
