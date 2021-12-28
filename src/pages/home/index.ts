@@ -3,7 +3,7 @@ import './style.scss';
 import { $ } from '@util/query-selector';
 import { store } from '@core/store';
 import { setRouteAction } from '@core/action';
-import logo from '@assets/images/logo.png';
+import logoImg from '@assets/images/logo.png';
 import tempHome from '@assets/images/temp-home.png';
 
 import MainButton from '@components/main-button';
@@ -12,7 +12,7 @@ export default class Home extends Component {
   template(): string {
     return `
       <header class="home-logo">
-        <img src="${logo}" alt="logo" class="logo-img"/>
+        <img src="${logoImg}" alt="logo" class="logo-img"/>
       </header>
       <section class="home-title-section">
         <p class="home-main-title">공부 유형 테스트</p>

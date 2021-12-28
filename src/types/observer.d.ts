@@ -6,6 +6,6 @@ interface ObserverMap<T> {
   [key: string]: T;
 }
 
-interface Object {
+interface Obj {
   [key: string]: any;
 }

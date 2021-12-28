@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "lib": ["es5", "es6", "es2017", "dom"],
+    "lib": ["es2015", "es5", "es6", "es2017", "dom"],
     "module": "ES6", // 모듈 형식 ES6
     "moduleResolution": "Node", // 모듈 해석 Node
     "esModuleInterop": true, // commonJS 모듈을 ES6로 import

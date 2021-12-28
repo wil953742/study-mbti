@@ -14,7 +14,7 @@ const answerSheet = new Array(12).fill(null);
 let currentPage = 0;
 
 export default class Test extends Component {
-  initState(): Object {
+  initState(): Obj {
     currentPage = 0;
     return {};
   }

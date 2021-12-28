@@ -14,5 +14,5 @@ interface State {
 }
 
 interface Reducer {
-  (state: Object, action: Action | null): Object;
+  (state: Obj, action: Action | null): Obj;
 }
