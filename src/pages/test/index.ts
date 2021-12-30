@@ -25,7 +25,7 @@ export default class Test extends Component {
           <img src="${loadingImg}" alt="loading-image" class="loading-img" />
         </section>
         <div class="test-container">
-          <section class="test-content-section" style="margin-left: 0px;">
+          <section class="test-content-section" style="transform: translateX(0)">
             ${pages
               .map((page) => `<div class="test-content test${page}"></div>`)
               .join('\n')}
@@ -62,7 +62,9 @@ export default class Test extends Component {
         answerSheet[currentPage] = ANSWER[currentPage + 1][type];
         currentPage >= 11
           ? routeHandler(currentPage)
-          : ($content.style.marginLeft = `-${100 * ++currentPage}%`);
+          : ($content.style.transform = `translateX(-${
+              8.3333 * ++currentPage
+            }%)`);
 
         $progressBar.style.width = `${(currentPage + 1) * 8.4}%`;
         $progressPage.innerText = `${currentPage + 1} / 12`;
@@ -75,7 +77,9 @@ export default class Test extends Component {
         answerSheet[currentPage] = null;
         currentPage <= 0
           ? routeHandler(currentPage)
-          : ($content.style.marginLeft = `-${100 * --currentPage}%`);
+          : ($content.style.transform = `translateX(-${
+              8.3333 * --currentPage
+            }%)`);
 
         $progressBar.style.width = `${(currentPage + 1) * 37}px`;
         $progressPage.innerText = `${currentPage + 1} / 12`;
