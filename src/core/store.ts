@@ -8,15 +8,15 @@ const initState = (): State => {
 };
 
 class Store {
-  private state: Object;
-  private frozenState: Object = {};
+  private state: Obj;
+  private frozenState: Obj = {};
   private reducer: Reducer;
 
   constructor(reducer: Reducer) {
     this.reducer = reducer;
     this.state = observable(reducer(initState(), null));
     this.frozenState = new Proxy(this.frozenState, {
-      get: (obj: Object, prop: string) => this.state[prop],
+      get: (obj: Obj, prop: string) => this.state[prop],
     });
   }
 

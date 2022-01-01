@@ -20,6 +20,7 @@
     $justify-content: center,
     $align-items: center
   );
+  margin-top: 100px;
 
   .answer-btn {
     @include notosans($font-size: var(--fontSize-1));

@@ -19,6 +19,7 @@
   min-width: var(--min-width);
   max-width: var(--max-width);
   overflow: hidden;
+  margin-top: 50px;
 
   .test-content-section {
     @include flexbox($align-items: center);
@@ -33,5 +34,6 @@
 }
 
 .test-progress-section {
+  margin-top: 100px;
   width: 100%;
 }
