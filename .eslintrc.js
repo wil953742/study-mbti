@@ -8,5 +8,7 @@ module.exports = {
   rules: {
     '@typescript-eslint/camelcase': 'off',
     camelcase: 'off',
+    'no-empty-function': 'off',
+    '@typescript-eslint/no-empty-function': ['error'],
   },
 };
