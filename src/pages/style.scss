@@ -7,7 +7,7 @@
     $align-items: center
   );
 
-  width: 100%;
+  width: calc(100% - 20px);
   padding: var(--fontSize-1) 10px;
-  max-width: var(--max-width);
+  max-width: 420px;
 }

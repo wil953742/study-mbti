@@ -32,7 +32,7 @@ export default class Home extends Component {
   setEvent(): void {
     const $mainStart: HTMLElement = $(this.$target, '.home-start-section');
 
-    const handleStart = (e: Event) => {
+    const handleStart: EventListener = (e) => {
       const [mainPath, subPath] = ['test', ''];
       store.dispatch(setRouteAction(mainPath, subPath, false));
     };

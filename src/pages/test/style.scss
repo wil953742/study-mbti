@@ -16,8 +16,6 @@
 .test-container {
   @include flexbox($align-items: center);
   width: 100%;
-  min-width: var(--min-width);
-  max-width: var(--max-width);
   overflow: hidden;
 
   .test-content-section {
@@ -26,9 +24,9 @@
   }
 
   .test-content {
-    width: 100vw;
-    max-width: 440px;
-    min-width: 30px;
+    width: calc(100vw - 20px);
+    max-width: 420px;
+    @include flexbox($direction: column);
   }
 }
 
