@@ -16,7 +16,7 @@ export default class Home extends Component {
       </header>
       <section class="home-title-section">
         <p class="home-main-title">공부 유형 테스트</p>
-        <p class="home-sub-title">나에게 꼭 맞는 공부 방법은?</p>
+        <p class="home-sub-title">나에게 꼭 맞는 공부 전략은?</p>
       </section>
       <section class="home-img-section">
         <img src="${tempHome}" alt="home-img" class="home-img"/>

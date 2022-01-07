@@ -1,7 +1,7 @@
 @import '@stylesheets/mixin.scss';
 
 .home-logo {
-  margin-bottom: var(--fontSize-3);
+  margin-bottom: var(--fontSize-1);
 
   .logo-img {
     width: 120px;
@@ -13,14 +13,19 @@
 
   .home-main-title {
     @include notosans(
-      $font-size: var(--fontSize-5),
+      $font-size: var(--fontSize-6),
       $font-weight: var(--fontWeight-7)
     );
+    text-align: center;
     margin: var(--fontSize-0) 0;
   }
 
   .home-sub-title {
-    @include notosans($font-size: var(--fontSize-2));
+    @include notosans(
+      $font-size: var(--fontSize-3),
+      $font-weight: var(--fontWeight-3)
+    );
+    color: var(--color-gray3);
     text-align: center;
   }
 }
