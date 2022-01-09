@@ -4,7 +4,7 @@ import { $ } from '@util/query-selector';
 import { store } from '@core/store';
 import { setRouteAction } from '@core/action';
 import logoImg from '@assets/images/logo.png';
-import tempHome from '@assets/images/temp-home.png';
+import homeImg from '@assets/images/home-image.png';
 
 import MainButton from '@components/main-button';
 
@@ -15,13 +15,14 @@ export default class Home extends Component {
         <img src="${logoImg}" alt="logo" class="logo-img"/>
       </header>
       <section class="home-title-section">
-        <p class="home-main-title">공부 유형 테스트</p>
-        <p class="home-sub-title">나에게 꼭 맞는 공부 전략은?</p>
+        <p class="home-main-title-weak">무선생과 함께하는</p>
+        <p class="home-main-title-bold">공부 유형 테스트</p>      
       </section>
       <section class="home-img-section">
-        <img src="${tempHome}" alt="home-img" class="home-img"/>
+        <p class="home-sub-title">나에게 꼭 맞는 공부 방법은?</p>
+        <img src="${homeImg}" alt="home-img" class="home-img"/>
+        <section class="home-start-section"></section>
       </section>
-      <section class="home-start-section"></section>
       <footer>
         <p class="footer-copyright">© All Rights Reserved</p>
         <p class="footer-contact">wil953742@naver.com</p>

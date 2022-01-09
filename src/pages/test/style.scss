@@ -17,6 +17,7 @@
   @include flexbox($align-items: center);
   width: 100%;
   overflow: hidden;
+  margin-top: 30px;
 
   .test-content-section {
     @include flexbox($align-items: center);

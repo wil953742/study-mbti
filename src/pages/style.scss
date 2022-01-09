@@ -4,8 +4,7 @@
   @include flexbox($direction: column, $align-items: center);
 
   width: calc(100% - 20px);
-  padding: var(--fontSize-1) 10px;
+  min-height: 100vh;
+  padding: 20px 10px;
   max-width: 420px;
-  transform: translateY(-3%);
-  // border: 2px solid var(--color-gray2);
 }
