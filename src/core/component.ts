@@ -2,8 +2,8 @@ import { observe, observable } from './observer';
 
 export default class Component {
   protected $target;
-  protected props: any;
-  protected state: any;
+  protected props: Props;
+  protected state: Obj;
 
   constructor($target: HTMLElement, props: Props = { value: null }) {
     this.$target = $target;
@@ -21,7 +21,7 @@ export default class Component {
     observe(setup);
   }
 
-  initState(): Object {
+  initState(): Obj {
     return {};
   }
   template(): string {
