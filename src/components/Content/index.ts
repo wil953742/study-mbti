@@ -6,7 +6,7 @@ import { QUESTION } from '@assets/text/question';
 
 export default class Content extends Component {
   template(): string {
-    const page: number = this.props.value;
+    const page: number = this.props.value as number;
     const { question, optionA, optionB } = QUESTION[page];
 
     return `

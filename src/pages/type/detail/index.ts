@@ -7,7 +7,7 @@ import resultImg from '@assets/images/temp-result.png';
 
 export default class Detail extends Component {
   template(): string {
-    const { title, hashtag, strategy } = RESULT[this.props.value];
+    const { title, hashtag, strategy } = RESULT[this.props.value as string];
 
     return `
         <header class="home-logo">

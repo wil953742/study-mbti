@@ -5,7 +5,7 @@ import { $ } from '@util/query-selector';
 
 export default class Progress extends Component {
   template(): string {
-    const currentPage = this.props.value + 1;
+    const currentPage: number = (this.props.value as number) + 1;
     return `
         <section class="progress-bar-section">
           <div class="background-bar"></div>
