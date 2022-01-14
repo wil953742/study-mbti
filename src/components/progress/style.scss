@@ -1,0 +1,52 @@
+@import '@stylesheets/mixin.scss';
+
+.progress-bar-section {
+  position: relative;
+  width: 100%;
+
+  .progress-bar,
+  .background-bar {
+    position: absolute;
+    height: 5px;
+    border-radius: 5px;
+  }
+
+  .background-bar {
+    width: 100%;
+    background-color: var(--color-gray1);
+  }
+
+  .progress-bar {
+    width: 8.4%;
+    background-color: var(--color-orange);
+    transition: width 0.2s ease-in-out;
+  }
+}
+
+.progress-info-section {
+  width: 100%;
+  margin-top: 10px;
+  @include flexbox($justify-content: space-between);
+
+  .return-btn {
+    background: none;
+    border: none;
+    color: var(--color-gray2);
+    @include notosans(
+      $font-size: var(--fontSize-1),
+      $font-weight: var(--fontWeight-7)
+    );
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &:active {
+      transform: scale(0.9);
+    }
+  }
+
+  .progress-page {
+    color: var(--color-gray2);
+  }
+}
