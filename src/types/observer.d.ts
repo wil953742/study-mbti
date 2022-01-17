@@ -7,5 +7,5 @@ interface ObserverMap<T> {
 }
 
 interface Obj {
-  [key: string]: any;
+  [key: string]: string | number;
 }
