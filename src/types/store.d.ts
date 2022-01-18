@@ -1,3 +1,15 @@
+interface VoidFunc {
+  (): void;
+}
+
+interface ObserverMap<T> {
+  [key: string]: T;
+}
+
+interface NoKidsObject {
+  [key: string]: string | number;
+}
+
 interface Route {
   mainPath: string;
   subPath: string;
@@ -9,10 +21,12 @@ interface Action {
   payload: Route;
 }
 
-interface State {
+interface CommonState {
   route: Route;
 }
 
+type State = NoKidsObject | CommonState;
+
 interface Reducer {
-  (state: Obj, action: Action | null): Obj;
+  (state: State, action: Action | null): State;
 }
