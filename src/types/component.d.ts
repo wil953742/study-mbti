@@ -1,6 +1,6 @@
 interface Props {
-  state?: Obj | string | number | null;
-  value?: Obj | string | number | null;
+  state?: NoKidsObject | string | number | null;
+  value?: NoKidsObject | string | number | null;
 }
 
 interface Questioin {

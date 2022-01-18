@@ -10,7 +10,7 @@ services:
     volumes:
       - /root/study-mbti/dist:/usr/share/nginx/html
       - ./nginx/conf.d:/etc/nginx/conf.d
-      - ./certbot/conf:/etc/nginx/ssl
+      - ./certbot/conf:/etc/letsencrypt
       - ./certbot/data:/var/www/certbot
 
   certbot:
