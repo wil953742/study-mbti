@@ -19,7 +19,7 @@
 
 ### TypeScript의 활용
 
-- TSconfig에 `**noImplicitAny` 과 `strictNullChecks`** 를 적용해 명시되지 않은 any, null 값이 없도록 처리했습니다.
+- TSconfig에 `noImplicitAny` 과 `strictNullChecks` 를 적용해 명시되지 않은 any, null 값이 없도록 처리했습니다.
 - eslint 와 prettier를 이용하여 코드의 통일성을 향상시켰습니다.
 
 
