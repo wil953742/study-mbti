@@ -8,7 +8,7 @@ import Home from './home';
 import Test from './test';
 import Type from './type';
 
-const [mainPath, subPath] = window.location.pathname.split('/');
+const [, mainPath, subPath] = window.location.pathname.split('/');
 
 store.dispatch(setRouteAction(mainPath, subPath, false));
 
