@@ -13,6 +13,7 @@ module.exports = {
   output: {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
+    publicPath: '/',
     clean: true,
   },
   devtool: DEVTOOL,
@@ -88,9 +89,9 @@ module.exports = {
     new MiniCssExtractPlugin({ filename: 'style.css' }),
     new HtmlWebpackPlugin({
       template: './src/index.html',
-      minify: {
-        collapseWhitespace: true,
-      },
+      // minify: {
+      //   collapseWhitespace: true,
+      // },
       hash: true,
       inject: 'body',
     }),

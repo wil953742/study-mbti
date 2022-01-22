@@ -6,6 +6,7 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
   ],
   rules: {
+    '@typescript-eslint/no-var-requires': 0,
     '@typescript-eslint/camelcase': 'off',
     camelcase: 'off',
     '@typescript-eslint/no-empty-function': [
