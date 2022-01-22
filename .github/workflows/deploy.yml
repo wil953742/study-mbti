@@ -2,7 +2,7 @@ name: continuous deploy
 
 on:
   push:
-    branches: [deploy]
+    branches: [main]
 
 jobs:
   deploy:
@@ -17,4 +17,6 @@ jobs:
           password: ${{ secrets.SERVER_PASSWORD }}
           port: ${{ secrets.SERVER_PORT }}
           script: |
+            cd study-mbti
+            echo "{{ secrets.BE_DOT_ENV }}" > ./.env
             ./deploy.sh
