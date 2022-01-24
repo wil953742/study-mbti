@@ -18,3 +18,10 @@
   font-size: $font-size;
   font-weight: $font-weight;
 }
+
+@mixin scdream($font-size: var(--fontSize-1), $font-weight: normal) {
+  font-family: SC Dream;
+  font-style: normal;
+  font-size: $font-size;
+  font-weight: $font-weight;
+}
