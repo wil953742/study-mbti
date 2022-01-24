@@ -24,6 +24,13 @@ export default class Test extends Component {
         <section class="test-loading" style="display:none">
           <img src="${loadingImg}" alt="loading-image" class="loading-img" />
         </section>
+        <div class="test-header">
+          <p class="header-p-sub">나에게 꼭 맞는 공부 방법은?</p>
+          <p class="header-p-main">공부 MBTI 테스트</p>
+          <p class="header-p-class1">제 1교시</p>
+          <div class="header-line-bold"></div>
+          <div class="header-line-light"></div>
+        </div>
         <div class="test-container">
           <section class="test-content-section" style="transform: translateX(0)">
             ${pages
