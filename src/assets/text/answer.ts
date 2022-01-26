@@ -1,49 +1,49 @@
 export const ANSWER: Answer = {
-  1: {
+  0: {
     selectA: 'E',
     selectB: 'I',
   },
-  2: {
+  1: {
     selectA: 'S',
     selectB: 'N',
   },
-  3: {
+  2: {
     selectA: 'T',
     selectB: 'F',
   },
-  4: {
+  3: {
     selectA: 'J',
     selectB: 'P',
   },
-  5: {
+  4: {
     selectA: 'E',
     selectB: 'I',
   },
-  6: {
+  5: {
     selectA: 'S',
     selectB: 'N',
   },
-  7: {
+  6: {
     selectA: 'T',
     selectB: 'F',
   },
-  8: {
+  7: {
     selectA: 'P',
     selectB: 'J',
   },
-  9: {
+  8: {
     selectA: 'E',
     selectB: 'I',
   },
-  10: {
+  9: {
     selectA: 'S',
     selectB: 'N',
   },
-  11: {
+  10: {
     selectA: 'F',
     selectB: 'T',
   },
-  12: {
+  11: {
     selectA: 'J',
     selectB: 'P',
   },

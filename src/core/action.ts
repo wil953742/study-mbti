@@ -1,3 +1,5 @@
+import { ANSWER } from '@assets/text/answer';
+
 export const setRouteAction = (
   mainPath: string,
   subPath: string,
@@ -8,6 +10,7 @@ export const setRouteAction = (
 });
 
 export const setResultAction = (answerSheet: string[]): Action => {
+  const mbtiAnswerSheet = answerSheet.map((val, idx) => ANSWER[idx][val]);
   const mbtiCnt: { [key: string]: number } = {
     E: 0,
     I: 0,
@@ -18,7 +21,8 @@ export const setResultAction = (answerSheet: string[]): Action => {
     J: 0,
     P: 0,
   };
-  answerSheet.forEach((answer) => {
+
+  mbtiAnswerSheet.forEach((answer: string) => {
     mbtiCnt[answer] += 1;
   });
 
@@ -28,4 +32,14 @@ export const setResultAction = (answerSheet: string[]): Action => {
     .trim();
 
   return setRouteAction('type', mbti, false);
+};
+
+export const setPageAction = (
+  currentPage: number,
+  selectOption: string | null
+): Action => {
+  return {
+    type: 'SET_PAGE',
+    payload: { currentPage, selectOption },
+  };
 };
