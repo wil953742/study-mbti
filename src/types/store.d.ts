@@ -16,13 +16,19 @@ interface Route {
   popState: boolean;
 }
 
+interface Test {
+  currentPage: number;
+  answerSheet: (null | string)[];
+}
+
 interface Action {
   type: string;
-  payload: Route;
+  payload: Route | { currentPage: number; selectOption: string | null }; //손 보기
 }
 
 interface CommonState {
   route: Route;
+  test?: Test;
 }
 
 type State = NoKidsObject | CommonState;

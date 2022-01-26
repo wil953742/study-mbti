@@ -22,7 +22,7 @@ export default class App extends Component {
   mounted(): void {
     const $main: HTMLElement = $(this.$target, '.main');
     const route = store.getState('route');
-    const { mainPath, subPath, popState } = route;
+    const { mainPath, subPath, popState } = route as Route;
     switch (mainPath) {
       case 'home':
         if (!popState)

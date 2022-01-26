@@ -2,15 +2,13 @@ import Component from '@core/component';
 import './style.scss';
 import { $ } from '@util/query-selector';
 import { store } from '@core/store';
-import { setRouteAction, setResultAction } from '@core/action';
-import { ANSWER } from '@assets/text/answer';
+import { setRouteAction, setResultAction, setPageAction } from '@core/action';
 import loadingImg from '@assets/images/temp-loading.png';
 
 import Content from '@components/content';
 import Progress from '@components/progress';
 
-const pages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
-const answerSheet = new Array(12).fill(null);
+export const pages = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
 let currentPage = 0;
 
 export default class Test extends Component {
@@ -34,7 +32,7 @@ export default class Test extends Component {
         <div class="test-container">
           <section class="test-content-section" style="transform: translateX(0)">
             ${pages
-              .map((page) => `<div class="test-content test${page}"></div>`)
+              .map((page) => `<div class="test-content test${page + 1}"></div>`)
               .join('\n')}
           </section>
         </div>
@@ -45,20 +43,10 @@ export default class Test extends Component {
   setEvent(): void {
     const $content: HTMLElement = $(this.$target, '.test-content-section');
     const $progress: HTMLElement = $(this.$target, '.test-progress-section');
-    const $progressBar: HTMLElement = $(this.$target, '.progress-bar');
-    const $progressPage: HTMLElement = $(this.$target, '.progress-page');
-    const resultHandler = (): void => {
+
+    const handleLoadingOn = (): void => {
       const $testLoading = $(this.$target, '.test-loading');
       $testLoading.style.display = 'block';
-      setTimeout(() => {
-        store.dispatch(setResultAction(answerSheet));
-      }, 1000);
-    };
-
-    const routeHandler = (currentPage: number): void => {
-      currentPage >= 11
-        ? resultHandler()
-        : store.dispatch(setRouteAction('home', '', false));
     };
 
     const answerHandler = (e: MouseEvent) => {
@@ -66,30 +54,25 @@ export default class Test extends Component {
       if (target.classList.contains('answer-btn')) {
         const type = target.dataset.type;
         if (!type) throw new Error("Can't get an data-type in Option Button");
-        answerSheet[currentPage] = ANSWER[currentPage + 1][type];
-        currentPage >= 11
-          ? routeHandler(currentPage)
-          : ($content.style.transform = `translateX(-${
-              8.3333 * ++currentPage
-            }%)`);
 
-        $progressBar.style.width = `${(currentPage + 1) * 8.4}%`;
-        $progressPage.innerText = `${currentPage + 1} / 12`;
+        if (currentPage >= 11) {
+          handleLoadingOn();
+        } else {
+          store.dispatch(setPageAction(++currentPage, type));
+          $content.style.transform = `translateX(-${8.3333 * currentPage}%)`;
+        }
       }
     };
 
     const returnHandler = (e: MouseEvent) => {
       const target = e.target as HTMLButtonElement;
-      if (target.classList.contains('return-btn')) {
-        answerSheet[currentPage] = null;
-        currentPage <= 0
-          ? routeHandler(currentPage)
-          : ($content.style.transform = `translateX(-${
-              8.3333 * --currentPage
-            }%)`);
-
-        $progressBar.style.width = `${(currentPage + 1) * 37}px`;
-        $progressPage.innerText = `${currentPage + 1} / 12`;
+      if (target.classList.contains('back-btn')) {
+        if (currentPage <= 0) {
+          store.dispatch(setRouteAction('home', '', false));
+        } else {
+          store.dispatch(setPageAction(--currentPage, null));
+          $content.style.transform = `translateX(-${8.3333 * currentPage}%)`;
+        }
       }
     };
 
@@ -102,8 +85,8 @@ export default class Test extends Component {
     new Progress($progress, { value: currentPage });
 
     pages.forEach((page) => {
-      const $content: HTMLElement = $(this.$target, `.test${page}`);
-      new Content($content, { value: page });
+      const $content: HTMLElement = $(this.$target, `.test${page + 1}`);
+      new Content($content, { value: page + 1 });
     });
   }
 }
