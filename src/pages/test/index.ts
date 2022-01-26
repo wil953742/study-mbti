@@ -2,7 +2,7 @@ import Component from '@core/component';
 import './style.scss';
 import { $ } from '@util/query-selector';
 import { store } from '@core/store';
-import { setRouteAction, setResultAction, setPageAction } from '@core/action';
+import { setRouteAction, setTestInit, setPageAction } from '@core/action';
 import loadingImg from '@assets/images/temp-loading.png';
 
 import Content from '@components/content';
@@ -14,6 +14,7 @@ let currentPage = 0;
 export default class Test extends Component {
   initState(): NoKidsObject {
     currentPage = 0;
+    setTestInit();
     return {};
   }
 
