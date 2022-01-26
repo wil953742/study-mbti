@@ -16,7 +16,7 @@ export default class Home extends Component {
       </header>
       <section class="home-title-section">
         <p class="home-main-title-weak">무선생과 함께하는</p>
-        <p class="home-main-title-bold">공부 mbti 테스트</p>      
+        <p class="home-main-title-bold">공부 유형 테스트</p>      
       </section>
       <section class="home-img-section">
         <p class="home-sub-title">나에게 꼭 맞는 공부 방법은?</p>
