@@ -16,7 +16,11 @@ export const observable = (obj: State): State => {
       return obj[prop];
     },
 
-    set: (obj, prop: keyof State, value: string | number | Route): boolean => {
+    set: (
+      obj,
+      prop: keyof State,
+      value: (string | number | Route) & (string | number)
+    ): boolean => {
       if (obj[prop] === value) return true; // 같은 값으로 업데이트하는 경우 함수가 재실행 되는 것을 방지
       if (JSON.stringify(obj[prop]) === JSON.stringify(value)) return true; // 같은 값으로 업데이트하는 경우 함수가 재실행 되는 것을 방지
       obj[prop] = value;

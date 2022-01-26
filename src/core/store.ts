@@ -4,6 +4,7 @@ import { reducer } from './reducer';
 const initState = (): CommonState => {
   return {
     route: { mainPath: 'home', subPath: '', popState: false },
+    test: { currentPage: 0, answerSheet: new Array(12).fill(null) },
   };
 };
 
@@ -30,7 +31,7 @@ class Store {
     }
 
     Object.entries(newState).forEach(
-      ([key, value]: [key: keyof CommonState, value: Route]) => {
+      ([key, value]: [key: keyof CommonState, value: any]) => {
         if (!this.state[key] || value === this.state[key]) {
         } else {
           this.state[key] = value;

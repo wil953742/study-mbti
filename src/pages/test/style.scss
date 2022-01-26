@@ -6,12 +6,11 @@
   .header-p-sub {
     @include scdream($font-size: var(--fontSize-2));
     @include flexbox($align-items: center, $justify-content: center);
-    margin-top: 8vh;
+    margin-top: 6vh;
   }
   .header-p-main {
     @include scdream($font-size: var(--fontSize-5), $font-weight: bold);
     @include flexbox($align-items: center, $justify-content: center);
-    margin-top: calc(var(--fontSize-1) / 2);
   }
   .header-p-class1 {
     @include chosunnm();
@@ -36,7 +35,7 @@
 }
 
 .test-loading {
-  position: absolute;
+  position: fixed;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
@@ -50,9 +49,10 @@
 
 .test-container {
   @include flexbox($align-items: center);
+  @include chosunnm();
   width: 100%;
   overflow: hidden;
-  margin-top: 30px;
+  margin-top: 4vh;
 
   .test-content-section {
     @include flexbox($align-items: center);
@@ -67,6 +67,7 @@
 }
 
 .test-progress-section {
-  margin-top: 100px;
+  margin-top: 4vh;
   width: 100%;
+  overflow: hidden;
 }
