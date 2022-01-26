@@ -14,7 +14,6 @@ let currentPage = 0;
 export default class Test extends Component {
   initState(): NoKidsObject {
     currentPage = 0;
-    setTestInit();
     return {};
   }
 
@@ -48,6 +47,7 @@ export default class Test extends Component {
     const handleLoadingOn = (): void => {
       const $testLoading = $(this.$target, '.test-loading');
       $testLoading.style.display = 'block';
+      setTestInit();
     };
 
     const answerHandler = (e: MouseEvent) => {
