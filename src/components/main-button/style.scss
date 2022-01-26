@@ -2,6 +2,7 @@
 
 .main-button {
   @include notosans($font-size: var(--fontSize-2));
+  text-align: center;
   width: 100%;
   height: 60px;
   border: none;
