@@ -55,13 +55,14 @@ export default class Test extends Component {
       if (target.classList.contains('answer-btn')) {
         const type = target.dataset.type;
         if (!type) throw new Error("Can't get an data-type in Option Button");
-
         if (currentPage >= 11) {
           handleLoadingOn();
         } else {
-          store.dispatch(setPageAction(++currentPage, type));
-          $content.style.transform = `translateX(-${8.3333 * currentPage}%)`;
+          $content.style.transform = `translateX(-${
+            8.3333 * (currentPage + 1)
+          }%)`;
         }
+        store.dispatch(setPageAction(++currentPage, type));
       }
     };
 
