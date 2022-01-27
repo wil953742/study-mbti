@@ -1,0 +1,7 @@
+@import '@stylesheets/mixin.scss';
+
+.omr-header {
+  @include flexbox($justify-content: space-between, $align-items: center);
+  @include chosunnm($font-size: var(--fontSize-0));
+  padding: 0 8px;
+}

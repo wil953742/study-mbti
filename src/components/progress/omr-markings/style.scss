@@ -1,0 +1,9 @@
+@import '@stylesheets/mixin.scss';
+
+.omr-checkbox {
+  position: absolute;
+  width: 7px;
+  height: 15px;
+  background: var(--color-black);
+  border-radius: 10px;
+}

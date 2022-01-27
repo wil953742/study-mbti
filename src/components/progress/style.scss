@@ -1,20 +1,6 @@
 @import '@stylesheets/mixin.scss';
 
-.omr-header {
-  @include flexbox($justify-content: space-between, $align-items: center);
-  @include chosunnm($font-size: var(--fontSize-0));
-  padding: 0 8px;
-}
-
 .omr-wrapper {
   position: relative;
   margin-top: 10px;
-
-  .omr-checkbox {
-    position: absolute;
-    width: 7px;
-    height: 15px;
-    background: var(--color-black);
-    border-radius: 10px;
-  }
 }
