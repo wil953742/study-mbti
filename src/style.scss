@@ -16,6 +16,8 @@ body {
 #app {
   width: 100%;
   min-height: 100%;
+  // background-image: url('./assets/images/img-background.png');
+  // background-size: contain;
   background: var(--color-background);
   @include flexbox($justify-content: center);
 }
