@@ -13,5 +13,11 @@ module.exports = {
       'error',
       { allow: ['functions', 'arrowFunctions', 'methods'] },
     ],
+    'prettier/prettier': [
+      'error',
+      {
+        endOfLine: 'auto',
+      },
+    ],
   },
 };
