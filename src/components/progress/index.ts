@@ -22,7 +22,7 @@ export default class Progress extends Component {
   routeToResult = (answerSheet: string[]) => {
     setTimeout(() => {
       store.dispatch(setResultAction(answerSheet));
-    }, 2000);
+    }, 1000);
   };
 
   createMarkingElement = (page: number, answerNumber: number): string => {
@@ -38,7 +38,7 @@ export default class Progress extends Component {
   template(): string {
     const test = store.getState('test');
     const { currentPage, answerSheet } = test as Test;
-    if (currentPage >= 11) this.routeToResult(answerSheet as string[]);
+    if (currentPage >= 12) this.routeToResult(answerSheet as string[]);
     return `
         <div class="omr-header">
           <button class="back-btn"><strong><</strong> 뒤로</button>

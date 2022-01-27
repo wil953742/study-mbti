@@ -5,7 +5,11 @@ export const reducer: any = (state: any, action: any) => {
 
   switch (action.type) {
     case 'SET_ROUTE':
-      return { ...state, route: action.payload };
+      return {
+        ...state,
+        route: action.payload,
+        test: { currentPage: 0, answerSheet: new Array(12).fill(null) },
+      };
 
     case 'SET_PAGE':
       const { currentPage, selectOption } = action.payload;
@@ -14,6 +18,12 @@ export const reducer: any = (state: any, action: any) => {
         ? (answerSheet[currentPage] = selectOption)
         : (answerSheet[currentPage - 1] = selectOption);
       return { ...state, test: { currentPage, answerSheet } };
+
+    case 'SET_TEST_INIT':
+      return {
+        ...state,
+        test: { currentPage: 0, answerSheet: new Array(12).fill(null) },
+      };
 
     default:
       return state;

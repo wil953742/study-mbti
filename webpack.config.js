@@ -19,6 +19,8 @@ module.exports = {
   devtool: DEVTOOL,
   devServer: {
     static: './dist',
+    historyApiFallback: true,
+    hot: true,
   },
   module: {
     rules: [

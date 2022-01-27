@@ -2,7 +2,7 @@ import Component from '@core/component';
 import './style.scss';
 import { $ } from '@util/query-selector';
 import { store } from '@core/store';
-import { setRouteAction, setResultAction, setPageAction } from '@core/action';
+import { setRouteAction, setTestInit, setPageAction } from '@core/action';
 import loadingImg from '@assets/images/temp-loading.png';
 
 import Content from '@components/content';
@@ -47,6 +47,7 @@ export default class Test extends Component {
     const handleLoadingOn = (): void => {
       const $testLoading = $(this.$target, '.test-loading');
       $testLoading.style.display = 'block';
+      setTestInit();
     };
 
     const answerHandler = (e: MouseEvent) => {
@@ -54,13 +55,14 @@ export default class Test extends Component {
       if (target.classList.contains('answer-btn')) {
         const type = target.dataset.type;
         if (!type) throw new Error("Can't get an data-type in Option Button");
-
         if (currentPage >= 11) {
           handleLoadingOn();
         } else {
-          store.dispatch(setPageAction(++currentPage, type));
-          $content.style.transform = `translateX(-${8.3333 * currentPage}%)`;
+          $content.style.transform = `translateX(-${
+            8.3333 * (currentPage + 1)
+          }%)`;
         }
+        store.dispatch(setPageAction(++currentPage, type));
       }
     };
 

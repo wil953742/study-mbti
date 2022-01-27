@@ -18,5 +18,5 @@ jobs:
           port: ${{ secrets.SERVER_PORT }}
           script: |
             cd study-mbti
-            echo "{{ secrets.BE_DOT_ENV }}" > ./.env
+            echo "${{ secrets.BE_DOT_ENV }}" > ./.env
             ./deploy.sh
