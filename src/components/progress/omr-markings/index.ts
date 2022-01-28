@@ -5,6 +5,7 @@ import { store } from '@core/store';
 import { pages } from '@pages/test';
 
 const optionToNum: { [key: string]: number } = { selectA: 1, selectB: 2 };
+const OMR_LENGTH = 8;
 const MARKING_CONST = {
   top: 71,
   left: 137 - 17,
@@ -20,8 +21,10 @@ export default class OmrMarkings extends Component {
     const { top, left, topInterval, leftInterval, nextInterval } =
       MARKING_CONST;
     const className = `omr-checkbox checkbox-${page + 1}`;
-    const style = `top: ${top + topInterval * (page % 8)}px; left: ${
-      left + leftInterval * answerNumber + nextInterval * Math.floor(page / 8)
+    const style = `top: ${top + topInterval * (page % OMR_LENGTH)}px; left: ${
+      left +
+      leftInterval * answerNumber +
+      nextInterval * Math.floor(page / OMR_LENGTH)
     }px`;
     return `<div class="${className}" style="${style}"></div>`;
   }

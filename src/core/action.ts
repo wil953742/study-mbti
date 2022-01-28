@@ -43,10 +43,3 @@ export const setPageAction = (
     payload: { currentPage, selectOption },
   };
 };
-
-export const setTestInit = () => {
-  return {
-    type: 'SET_TEST_INIT',
-    payload: {},
-  };
-};
