@@ -19,12 +19,6 @@ export const reducer: any = (state: any, action: any) => {
         : (answerSheet[currentPage - 1] = selectOption);
       return { ...state, test: { currentPage, answerSheet } };
 
-    case 'SET_TEST_INIT':
-      return {
-        ...state,
-        test: { currentPage: 0, answerSheet: new Array(12).fill(null) },
-      };
-
     default:
       return state;
   }
