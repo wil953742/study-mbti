@@ -2,7 +2,7 @@ import Component from '@core/component';
 import './style.scss';
 import { $ } from '@util/query-selector';
 import { store } from '@core/store';
-import { setRouteAction, setTestInit, setPageAction } from '@core/action';
+import { setRouteAction, setPageAction } from '@core/action';
 import loadingImg from '@assets/images/temp-loading.png';
 
 import Content from '@components/content';
@@ -47,7 +47,6 @@ export default class Test extends Component {
     const handleLoadingOn = (): void => {
       const $testLoading = $(this.$target, '.test-loading');
       $testLoading.style.display = 'block';
-      setTestInit();
     };
 
     const answerHandler = (e: MouseEvent) => {

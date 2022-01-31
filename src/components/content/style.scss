@@ -4,16 +4,19 @@
 }
 
 .content-question {
-  margin: 5vh 0;
+  margin-top: 5vh;
+  margin-bottom: 4vh;
   width: calc(100% - 42px);
   padding: var(--fontSize-1) 20px;
   border: 1px solid var(--color-black);
   font-weight: 600;
+  font-size: var(--fontSize-2);
 }
 
 .answer-btn {
   margin-bottom: var(--fontSize-1);
   margin-left: 10px;
+  font-size: var(--fontSize-2);
 
   &:hover {
     cursor: pointer;
