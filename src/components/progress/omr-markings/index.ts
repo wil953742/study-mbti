@@ -5,11 +5,11 @@ import { store } from '@core/store';
 import { pages } from '@pages/test';
 
 const optionToNum: { [key: string]: number } = { selectA: 1, selectB: 2 };
-const OMR_LENGTH = 8;
+const OMR_LENGTH = 4;
 const MARKING_CONST = {
-  top: 71,
-  left: 137 - 17,
-  topInterval: 18,
+  top: 69,
+  left: 138 - 17,
+  topInterval: 20,
   leftInterval: 17,
   nextInterval: 96,
   width: 7,
