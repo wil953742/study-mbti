@@ -7,6 +7,14 @@ import icAgain from '@assets/images/ic-again.svg';
 import resultImg from '@assets/images/img-sample.png';
 
 export default class Detail extends Component {
+  calcEqualTrialDots(sideLength:number): string {
+    const [cx, cy] = [100, 100];
+    const [nx1, ny1] = [cx, cy - Math.floor(sideLength / 3 * Math.sqrt(3))];
+    const [nx2, ny2] = [cx - (sideLength/2), cy + Math.floor((sideLength / 6) * Math.sqrt(3))];
+    const [nx3, ny3] = [cx + (sideLength/2), cy + Math.floor((sideLength / 6) * Math.sqrt(3))];
+    return `${nx1} ${ny1}, ${nx2} ${ny2}, ${nx3} ${ny3}, ${nx1} ${ny1}`;
+  }
+
   template(): string {
     const { subTitle, mainTitle, hashtag1, hashtag2, hashtag3, strategy } =
       RESULT[this.props.value as string];
@@ -25,7 +33,13 @@ export default class Detail extends Component {
           <img src="${resultImg} alt="result-img" />
         </section>
         <section class="result-graph"> 
-          <svg></svg>
+          <svg width="200" height="200">
+            <polyline fill="none" stroke="black" points="${this.calcEqualTrialDots(150)}" />
+            <polyline fill="none" stroke="black" points="${this.calcEqualTrialDots(120)}" />
+            <polyline fill="none" stroke="black" points="${this.calcEqualTrialDots(90)}" />
+            <polyline fill="none" stroke="black" points="${this.calcEqualTrialDots(60)}" />
+            <polyline fill="none" stroke="black" points="${this.calcEqualTrialDots(30)}" />
+          </svg>
         </section>
         <section class="result-overview">
           <section>
@@ -54,14 +68,20 @@ export default class Detail extends Component {
           </div>
         </section>
         <section class="result-btn">
-          <button>다른 결과 유형 보러가기</button>
+          <button>
+            <div></div>
+            <p>다른 결과 유형 보러가기</p>
+            <div></div>
+          </button>
           <button>
             <img src="${icShare}" alt="share-icon"/>
-            테스트 결과 공유하기
+            <p>테스트 결과 공유하기</p>
+            <div></div>
           </button>
           <button>
             <img src="${icAgain}" alt="again-icon"/>
-            테스트 다시하기
+            <p>테스트 다시하기</p>
+            <div></div>
           </button>
         </section>
       `;
