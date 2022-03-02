@@ -7,11 +7,17 @@ import icAgain from '@assets/images/ic-again.svg';
 import resultImg from '@assets/images/img-sample.png';
 
 export default class Detail extends Component {
-  calcEqualTrialDots(sideLength:number): string {
-    const [cx, cy] = [100, 100];
-    const [nx1, ny1] = [cx, cy - Math.floor(sideLength / 3 * Math.sqrt(3))];
-    const [nx2, ny2] = [cx - (sideLength/2), cy + Math.floor((sideLength / 6) * Math.sqrt(3))];
-    const [nx3, ny3] = [cx + (sideLength/2), cy + Math.floor((sideLength / 6) * Math.sqrt(3))];
+  calcEqualTrialDots(sideLength: number): string {
+    const [cx, cy] = [100, 130];
+    const [nx1, ny1] = [cx, cy - Math.floor((sideLength / 3) * Math.sqrt(3))];
+    const [nx2, ny2] = [
+      cx - sideLength / 2,
+      cy + Math.floor((sideLength / 6) * Math.sqrt(3)),
+    ];
+    const [nx3, ny3] = [
+      cx + sideLength / 2,
+      cy + Math.floor((sideLength / 6) * Math.sqrt(3)),
+    ];
     return `${nx1} ${ny1}, ${nx2} ${ny2}, ${nx3} ${ny3}, ${nx1} ${ny1}`;
   }
 
@@ -34,11 +40,21 @@ export default class Detail extends Component {
         </section>
         <section class="result-graph"> 
           <svg width="200" height="200">
-            <polyline fill="none" stroke="black" points="${this.calcEqualTrialDots(150)}" />
-            <polyline fill="none" stroke="black" points="${this.calcEqualTrialDots(120)}" />
-            <polyline fill="none" stroke="black" points="${this.calcEqualTrialDots(90)}" />
-            <polyline fill="none" stroke="black" points="${this.calcEqualTrialDots(60)}" />
-            <polyline fill="none" stroke="black" points="${this.calcEqualTrialDots(30)}" />
+            <polyline fill="none" stroke="black" points="${this.calcEqualTrialDots(
+              150
+            )}" />
+            <polyline fill="none" stroke="black" points="${this.calcEqualTrialDots(
+              120
+            )}" />
+            <polyline fill="none" stroke="black" points="${this.calcEqualTrialDots(
+              90
+            )}" />
+            <polyline fill="none" stroke="black" points="${this.calcEqualTrialDots(
+              60
+            )}" />
+            <polyline fill="none" stroke="black" points="${this.calcEqualTrialDots(
+              30
+            )}" />
           </svg>
         </section>
         <section class="result-overview">
@@ -47,12 +63,12 @@ export default class Detail extends Component {
             <p>유형 특징</p>
             <div class="double-line"></div>
           </section>
-          <div>
-            - 유형특징 1
-          </div>
-          <div>
-            - 유형특징 2
-          </div>
+          <p class="result-content">
+            · 유형특징 1
+          </p>
+          <p class="result-content">
+            · 유형특징 2
+          </p>
         </section>
         <section class="result-recommend">
           <section>
@@ -60,29 +76,33 @@ export default class Detail extends Component {
             <p>이런 유형을 위한 추천</p>
             <div class="double-line"></div>
           </section>
-          <div>
-          - 유형추천 1
-          </div>
-          <div>
-          - 유형추천 2
-          </div>
+          <p class="result-content">
+            · 유형추천 1
+          </p>
+          <p class="result-content">
+            · 유형추천 2
+          </p>
         </section>
         <section class="result-btn">
-          <button>
-            <div></div>
-            <p>다른 결과 유형 보러가기</p>
-            <div></div>
-          </button>
+          <a href="/type">
+            <button>
+              <div></div>
+              <p>다른 결과 유형 보러가기</p>
+              <div></div>
+            </button>
+          </a>
           <button>
             <img src="${icShare}" alt="share-icon"/>
             <p>테스트 결과 공유하기</p>
             <div></div>
           </button>
-          <button>
-            <img src="${icAgain}" alt="again-icon"/>
-            <p>테스트 다시하기</p>
-            <div></div>
-          </button>
+          <a href="/home">
+            <button>
+              <img src="${icAgain}" alt="again-icon"/>
+              <p>테스트 다시하기</p>
+              <div></div>
+            </button>
+          </a>
         </section>
       `;
   }
