@@ -1,5 +1,50 @@
 @import '@stylesheets/mixin.scss';
 
+.test-loading {
+  & > .loading-dim {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9;
+    background-color: rgba(120, 120, 120, 0.365);
+  }
+
+  & > .loading-modal {
+    position: fixed;
+    left: 50%;
+    top: 45%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    width: 140px;
+    height: 140px;
+    border-radius: 999px;
+    background-color: var(--color-white);
+
+    & > img {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -90%);
+    }
+
+    & > .ic-omr {
+      width: 100px;
+      margin-top: 10px;
+    }
+
+    & > p {
+      position: absolute;
+      width: fit-content;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, 25px);
+      font-size: var(--fontSize-1);
+    }
+  }
+}
+
 .test-header {
   width: 100%;
 
@@ -31,19 +76,6 @@
     height: 1px;
     background-color: var(--color-black);
     margin-top: 5px;
-  }
-}
-
-.test-loading {
-  position: fixed;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1;
-
-  .loading-img {
-    width: 180px;
-    height: 180px;
   }
 }
 

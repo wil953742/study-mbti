@@ -19,8 +19,11 @@ interface Answer {
 
 interface Result {
   [mbti: string]: {
-    title: string;
-    hashtag: string;
+    subTitle: string;
+    mainTitle: string;
+    hashtag1: string;
+    hashtag2: string;
+    hashtag3: string;
     strategy: string;
   };
 }

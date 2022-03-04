@@ -11,6 +11,7 @@ const isLastPage = (currentPage: number): number => {
 export default class OmrHeader extends Component {
   routeToResult(answerSheet: string[]) {
     setTimeout(() => {
+      document.body.style.overflow = '';
       store.dispatch(setResultAction(answerSheet));
     }, 1000);
   }
