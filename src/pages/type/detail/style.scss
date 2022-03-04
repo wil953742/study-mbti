@@ -9,7 +9,7 @@
   }
 
   & > h1 {
-    @include scdream($font-size: var(--fontSize-6), $font-weight: 800);
+    @include scdream($font-size: var(--fontSize-5), $font-weight: 800);
   }
 }
 

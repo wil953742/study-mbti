@@ -4,7 +4,7 @@
 @import './stylesheets/mixin.scss';
 
 html {
-  @include notosans();
+  @include chosunnm();
   color: var(--color-text);
 }
 

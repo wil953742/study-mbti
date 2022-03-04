@@ -3,7 +3,8 @@ import './style.scss';
 import { $ } from '@util/query-selector';
 import { store } from '@core/store';
 import { setRouteAction, setPageAction } from '@core/action';
-import loadingImg from '@assets/images/temp-loading.png';
+import icV from '@assets/images/ic-v.svg';
+import icOmr from '@assets/images/ic-omr.svg';
 
 import Content from '@components/content';
 import Progress from '@components/progress';
@@ -20,7 +21,12 @@ export default class Test extends Component {
   template(): string {
     return `
         <section class="test-loading" style="display:none">
-          <img src="${loadingImg}" alt="loading-image" class="loading-img" />
+          <div class="loading-dim"></div>
+          <div class="loading-modal">
+            <img src="${icOmr}" alt="ic-omr" class="ic-omr"/>
+            <img src="${icV}" alt="ic-v" />
+            <p>채점중입니다</p>
+          </div>
         </section>
         <section class="test-header">
           <p class="header-p-sub">나에게 꼭 맞는 공부 방법은?</p>
@@ -46,6 +52,7 @@ export default class Test extends Component {
 
     const handleLoadingOn = (): void => {
       const $testLoading = $(this.$target, '.test-loading');
+      document.body.style.overflow = 'hidden';
       $testLoading.style.display = 'block';
     };
 
