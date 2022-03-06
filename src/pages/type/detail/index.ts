@@ -22,8 +22,15 @@ export default class Detail extends Component {
   }
 
   template(): string {
-    const { subTitle, mainTitle, hashtag1, hashtag2, hashtag3, strategy } =
-      RESULT[this.props.value as string];
+    const {
+      subTitle,
+      mainTitle,
+      hashtag1,
+      hashtag2,
+      hashtag3,
+      overview,
+      recommend,
+    } = RESULT[this.props.value as string];
 
     return `
         <section class="result-header">
