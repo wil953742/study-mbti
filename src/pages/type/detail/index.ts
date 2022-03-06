@@ -21,9 +21,24 @@ export default class Detail extends Component {
     return `${nx1} ${ny1}, ${nx2} ${ny2}, ${nx3} ${ny3}, ${nx1} ${ny1}`;
   }
 
+  resultContentGenerator(contentList: string[]) {
+    let string = ``;
+    contentList.forEach((content) => {
+      string += `<p class="result-content">${content}</p>`;
+    });
+    return string;
+  }
+
   template(): string {
-    const { subTitle, mainTitle, hashtag1, hashtag2, hashtag3, strategy } =
-      RESULT[this.props.value as string];
+    const {
+      subTitle,
+      mainTitle,
+      hashtag1,
+      hashtag2,
+      hashtag3,
+      overview,
+      recommend,
+    } = RESULT[this.props.value as string];
 
     return `
         <section class="result-header">
@@ -63,12 +78,7 @@ export default class Detail extends Component {
             <p>유형 특징</p>
             <div class="double-line"></div>
           </section>
-          <p class="result-content">
-            · 유형특징 1
-          </p>
-          <p class="result-content">
-            · 유형특징 2
-          </p>
+          ${this.resultContentGenerator(overview)}
         </section>
         <section class="result-recommend">
           <section>
@@ -76,12 +86,7 @@ export default class Detail extends Component {
             <p>이런 유형을 위한 추천</p>
             <div class="double-line"></div>
           </section>
-          <p class="result-content">
-            · 유형추천 1
-          </p>
-          <p class="result-content">
-            · 유형추천 2
-          </p>
+          ${this.resultContentGenerator(recommend)}
         </section>
         <section class="result-btn">
           <a href="/type">

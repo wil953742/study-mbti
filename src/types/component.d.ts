@@ -24,6 +24,7 @@ interface Result {
     hashtag1: string;
     hashtag2: string;
     hashtag3: string;
-    strategy: string;
+    overview: string[];
+    recommend: string[];
   };
 }

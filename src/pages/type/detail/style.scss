@@ -69,12 +69,13 @@
 
   & > .result-content {
     margin-bottom: var(--fontSize-0);
+    line-height: var(--fontSize-3);
   }
 }
 
 .result-btn {
   @include flexbox($direction: column, $align-items: center);
-  margin-top: 50px;
+  margin-top: 20px;
 
   a,
   button {
