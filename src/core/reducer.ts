@@ -19,6 +19,10 @@ export const reducer: any = (state: any, action: any) => {
         : (answerSheet[currentPage - 1] = selectOption);
       return { ...state, test: { currentPage, answerSheet } };
 
+    case 'SET_TOAST_MSG':
+      const { isToastMsgOn, isCopySuccess } = action.payload;
+      return { ...state, toastMsg: { isToastMsgOn, isCopySuccess } };
+
     default:
       return state;
   }

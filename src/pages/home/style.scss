@@ -72,15 +72,14 @@
 }
 
 footer {
+  font-size: var(--fontSize-0);
+  line-height: var(--fontSize-2);
+
   .footer-copyright {
     margin: var(--fontSize-0) 0;
   }
 
   .footer-contact {
     text-align: center;
-    @include notosans(
-      $font-size: var(--fontSize-0),
-      $font-weight: var(--fontWeight-3)
-    );
   }
 }

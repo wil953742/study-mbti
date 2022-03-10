@@ -26,6 +26,7 @@ export default class Home extends Component {
       <footer>
         <p class="footer-copyright">© All Rights Reserved</p>
         <p class="footer-contact">wil953742@naver.com</p>
+        <p class="footer-contact">jaeunkim04@gmail.com</p>
       </footer>
     `;
   }

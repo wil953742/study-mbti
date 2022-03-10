@@ -1,0 +1,10 @@
+@import '@stylesheets/mixin.scss';
+
+.toast-msg-wrapper {
+  @include notosans($font-size: var(--fontSize-0) ,$font-weight: 300);
+  width: fit-content;
+  padding: 5px 20px 5px 10px;
+  border-radius: 5px;
+  color: var(--color-white);
+  background: rgba(218, 144, 0, 0.86);
+}

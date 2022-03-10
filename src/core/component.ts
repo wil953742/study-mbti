@@ -3,7 +3,7 @@ import { observe, observable } from './observer';
 export default class Component {
   protected $target;
   protected props: Props;
-  protected state: NoKidsObject;
+  protected state: any;
 
   constructor($target: HTMLElement, props: Props = { value: null }) {
     this.$target = $target;
@@ -12,7 +12,7 @@ export default class Component {
   }
 
   subscribe() {
-    this.state = observable(this.initState()) as NoKidsObject;
+    this.state = observable(this.initState());
     const setup = () => {
       this.render();
       this.mounted();
@@ -21,7 +21,7 @@ export default class Component {
     observe(setup);
   }
 
-  initState(): NoKidsObject {
+  initState(): any {
     return {};
   }
   template(): string {

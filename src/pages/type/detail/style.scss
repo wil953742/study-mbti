@@ -1,22 +1,30 @@
 @import '@stylesheets/mixin.scss';
 
+.success-toast-msg,
+.fail-toast-msg {
+  position: fixed;
+  top: 20px;
+  right: 10px;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
 .result-header {
   margin-top: 24px;
   text-align: center;
 
   & > h3 {
     @include scdream($font-size: var(--fontSize-3), $font-weight: 500);
+    line-height: var(--fontSize-5);
   }
 
   & > h1 {
     @include scdream($font-size: var(--fontSize-5), $font-weight: 800);
+    line-height: var(--fontSize-7);
   }
 }
 
 .result-hashtag {
   margin-top: var(--fontSize-1);
   & > p {
-    @include chosunnm();
     display: inline-block;
     padding: 6px var(--fontSize-1);
     border: 1px solid var(--color-black);
@@ -34,13 +42,6 @@
   }
 }
 
-.result-graph {
-  @include flexbox($justify-content: center, $align-items: center);
-  width: 100%;
-  border: 1px solid var(--color-black);
-  border-radius: var(--fontSize-4);
-}
-
 .result-overview,
 .result-recommend {
   width: 100%;
@@ -52,34 +53,50 @@
     align-items: center;
 
     .double-line {
-      width: 100%;
       height: calc(var(--fontSize-1) / 4);
       border-top: 2px solid var(--color-black);
       border-bottom: 1px solid var(--color-black);
     }
-
-    & > p {
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      background-color: var(--color-background);
-      padding: 0 10px;
-    }
   }
 
   & > .result-content {
+    width: 100%;
     margin-bottom: var(--fontSize-0);
     line-height: var(--fontSize-3);
   }
 }
 
+.result-overview {
+  section > p {
+    width: 83px;
+    text-align: center;
+  }
+
+  .double-line {
+    width: calc((100% - 83px) / 2);
+  }
+}
+
+.result-recommend {
+  section > p {
+    width: 165px;
+    text-align: center;
+  }
+
+  .double-line {
+    width: calc((100% - 165px) / 2);
+  }
+}
+
 .result-btn {
-  @include flexbox($direction: column, $align-items: center);
+  @include flexbox($direction: column, $justify-content: center, $align-items: center);
   margin-top: 20px;
+  width: 100%;
 
   a,
   button {
     width: 100%;
+    max-width: 230px;
   }
 
   button {
@@ -88,9 +105,9 @@
     border-radius: 32px;
     padding: var(--fontSize-0) var(--fontSize-2);
     margin-top: 10px;
-  }
-}
 
-.result-strategy {
-  @include notosans($font-weight: var(--fontWeight-3));
+    &:active {
+      transform: scale(0.95);
+    }
+  }
 }

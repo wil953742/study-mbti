@@ -21,14 +21,23 @@ interface Test {
   answerSheet: (null | string)[];
 }
 
+interface ToastMsg {
+  isToastMsgOn: boolean;
+  isCopySuccess: boolean;
+}
+
 interface Action {
   type: string;
-  payload: Route | { currentPage: number; selectOption: string | null }; //손 보기
+  payload:
+    | Route
+    | { currentPage: number; selectOption: string | null }
+    | ToastMsg; //손 보기
 }
 
 interface CommonState {
   route: Route;
   test?: Test;
+  toastMsg: ToastMsg;
 }
 
 type State = NoKidsObject | CommonState;

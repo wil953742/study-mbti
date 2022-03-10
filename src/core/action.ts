@@ -43,3 +43,13 @@ export const setPageAction = (
     payload: { currentPage, selectOption },
   };
 };
+
+export const setToastMsg = (
+  isToastMsgOn: boolean,
+  isCopySuccess: boolean
+): Action => {
+  return {
+    type: 'SET_TOAST_MSG',
+    payload: { isToastMsgOn, isCopySuccess },
+  };
+};
