@@ -5,6 +5,7 @@ const initState = (): CommonState => {
   return {
     route: { mainPath: 'home', subPath: '', popState: false },
     test: { currentPage: 0, answerSheet: new Array(12).fill(null) },
+    toastMsg: { isToastMsgOn: false, isCopySuccess: true },
   };
 };
 

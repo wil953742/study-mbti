@@ -8,7 +8,7 @@ const optionToNum: { [key: string]: number } = { selectA: 1, selectB: 2 };
 const OMR_LENGTH = 4;
 const MARKING_CONST = {
   top: 69,
-  left: 138 - 17,
+  left: 105 - 17,
   topInterval: 20,
   leftInterval: 17,
   nextInterval: 96,

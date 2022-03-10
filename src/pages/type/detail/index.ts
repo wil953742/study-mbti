@@ -5,22 +5,13 @@ import { RESULT } from '@assets/text/result';
 import icShare from '@assets/images/ic-share.svg';
 import icAgain from '@assets/images/ic-again.svg';
 import resultImg from '@assets/images/img-sample.png';
+import ToastMessage from '@components/toast-message';
+import SkillGraph from '@components/skill-graph';
+
+const successCopyMsg = `링크가 클립보드에 복사되었습니다`;
+const failCopyMsg = `복사가 실패했습니다! 다시 시도해 주세요`;
 
 export default class Detail extends Component {
-  calcEqualTrialDots(sideLength: number): string {
-    const [cx, cy] = [100, 130];
-    const [nx1, ny1] = [cx, cy - Math.floor((sideLength / 3) * Math.sqrt(3))];
-    const [nx2, ny2] = [
-      cx - sideLength / 2,
-      cy + Math.floor((sideLength / 6) * Math.sqrt(3)),
-    ];
-    const [nx3, ny3] = [
-      cx + sideLength / 2,
-      cy + Math.floor((sideLength / 6) * Math.sqrt(3)),
-    ];
-    return `${nx1} ${ny1}, ${nx2} ${ny2}, ${nx3} ${ny3}, ${nx1} ${ny1}`;
-  }
-
   resultContentGenerator(contentList: string[]) {
     let string = ``;
     contentList.forEach((content) => {
@@ -41,6 +32,8 @@ export default class Detail extends Component {
     } = RESULT[this.props.value as string];
 
     return `
+        <section class="success-toast-msg" style="opacity: 0%; transform: translateX(100px)"></section>
+        <section class="fail-toast-msg" style="opacity: 0%; transform: translateX(100px)"></section>
         <section class="result-header">
           <h3>${subTitle}</h3>
           <h1>${mainTitle}</h1>
@@ -53,25 +46,7 @@ export default class Detail extends Component {
         <section class="result-character">
           <img src="${resultImg} alt="result-img" />
         </section>
-        <section class="result-graph"> 
-          <svg width="200" height="200">
-            <polyline fill="none" stroke="black" points="${this.calcEqualTrialDots(
-              150
-            )}" />
-            <polyline fill="none" stroke="black" points="${this.calcEqualTrialDots(
-              120
-            )}" />
-            <polyline fill="none" stroke="black" points="${this.calcEqualTrialDots(
-              90
-            )}" />
-            <polyline fill="none" stroke="black" points="${this.calcEqualTrialDots(
-              60
-            )}" />
-            <polyline fill="none" stroke="black" points="${this.calcEqualTrialDots(
-              30
-            )}" />
-          </svg>
-        </section>
+        <section class="result-graph"></section>
         <section class="result-overview">
           <section>
             <div class="double-line"></div>
@@ -96,9 +71,9 @@ export default class Detail extends Component {
               <div></div>
             </button>
           </a>
-          <button>
+          <button id="copy-link">
             <img src="${icShare}" alt="share-icon"/>
-            <p>테스트 결과 공유하기</p>
+            <p>링크 복사</p>
             <div></div>
           </button>
           <a href="/home">
@@ -110,5 +85,45 @@ export default class Detail extends Component {
           </a>
         </section>
       `;
+  }
+
+  setEvent() {
+    const $successToastMsg = $(this.$target, '.success-toast-msg');
+    const $failToastMsg = $(this.$target, '.fail-toast-msg');
+    const $btnCopyLink = $(this.$target, '#copy-link');
+
+    const ComeMessageUp = ($target: HTMLElement) => {
+      $target.style.transform = 'translateX(0)';
+      $target.style.opacity = '100%';
+    };
+
+    const goMessageDown = ($target: HTMLElement) => {
+      $target.style.transform = 'translateX(100px)';
+      $target.style.opacity = '0%';
+    };
+
+    const copyToClipboard = (event: any) => {
+      const textAreaElement = document.createElement('textarea');
+      document.body.appendChild(textAreaElement);
+      textAreaElement.value = window.location.href;
+      textAreaElement.select();
+      const result = document.execCommand('copy');
+      document.body.removeChild(textAreaElement);
+      result ? ComeMessageUp($successToastMsg) : ComeMessageUp($failToastMsg);
+
+      setTimeout(() => {
+        result ? goMessageDown($successToastMsg) : goMessageDown($failToastMsg);
+      }, 1000);
+    };
+    $btnCopyLink.addEventListener('click', copyToClipboard);
+  }
+
+  mounted() {
+    const $successToastMsg = $(this.$target, '.success-toast-msg');
+    const $failToastMsg = $(this.$target, '.fail-toast-msg');
+    const $resultGraph = $(this.$target, '.result-graph');
+    new ToastMessage($successToastMsg, { value: successCopyMsg });
+    new ToastMessage($failToastMsg, { value: failCopyMsg });
+    new SkillGraph($resultGraph);
   }
 }
