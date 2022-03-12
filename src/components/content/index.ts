@@ -1,7 +1,6 @@
 import Component from '@core/component';
 import './style.scss';
 
-import { $ } from '@util/query-selector';
 import { QUESTION } from '@assets/text/question';
 
 export default class Content extends Component {
@@ -10,7 +9,7 @@ export default class Content extends Component {
     const { question, optionA, optionB } = QUESTION[page];
 
     return `
-      <p class="content-question-intro">${page}. 빈칸에 들어갈 표현으로 가장 적절한 것은? [2점]</p>
+      <p class="content-question-intro">${page}. 다음 질문에 대한 답으로 더 적절한 것은? [2점]</p>
       <article class="content-question">${question}</article>
       <button class="answer-btn" data-type="selectA">${optionA}</button>
       <button class="answer-btn" data-type="selectB">${optionB}</button>

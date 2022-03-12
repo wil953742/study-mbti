@@ -5,6 +5,11 @@ export const RESULT: Result = {
     hashtag1: `#사람을 위한 공부`,
     hashtag2: `#사람에 의한 공부`,
     hashtag3: `#단체 공부가 효과적`,
+    skills: {
+      science: 3.5,
+      liberal: 2,
+      art: 3,
+    },
     overview: [
       `사람들에게 도움이 되는 공부를 할 때, 훨씬 효율이 올라가요. 학교에서는 수업에 어려움을 겪는 친구들에게 최고의 조력자가 되어주기도 합니다.`,
       `주변 사람들이 자신을 인정해 주기를 바라기 때문에 주로 모범적인 학생인 경우가 많아요.`,
@@ -24,6 +29,11 @@ export const RESULT: Result = {
     hashtag1: `#창의적`,
     hashtag2: `#걱정도창의적임`,
     hashtag3: `#편식이심한편`,
+    skills: {
+      science: 2,
+      liberal: 1,
+      art: 5,
+    },
     overview: [
       `당신의 공부는 머리보다는 마음! 새로운 생각과 가능성을 제시하는 일을 무척 즐거워해요.`,
       `굉장히 창의적이며, 자신이 흥미를 느낀 주제에 푹 빠져서 몰입하는 경향이 있어요.`,
@@ -43,6 +53,11 @@ export const RESULT: Result = {
     hashtag1: `#내가리더다`,
     hashtag2: `#야망의소유자`,
     hashtag3: `#지는건용납못해`,
+    skills: {
+      science: 5.5,
+      liberal: 5,
+      art: 3,
+    },
     overview: [
       `응용력과 이해력이 뛰어나서 이론 학습에 강해요.`,
       `특히 문제해결력이 뛰어나서 해결책을 제시하거나 여의치 않을 경우 창의적인 방안을 제시합니다.`,
@@ -62,6 +77,11 @@ export const RESULT: Result = {
     hashtag1: `#자칭천재`,
     hashtag2: `#논리왕`,
     hashtag3: `#모아니면도`,
+    skills: {
+      science: 2,
+      liberal: 3,
+      art: 5,
+    },
     overview: [
       `타인과 많은 질문을 주고 받으며, 토론을 통해 학습하는 타입이에요! `,
       `다른 사람의 생각에서 논리적인 부분을 발견하여, 자신의 논리로 발달시키는 경향이 있어요.`,
@@ -81,6 +101,11 @@ export const RESULT: Result = {
     hashtag1: `#인싸라공부가힘듦`,
     hashtag2: `#인정욕구`,
     hashtag3: `#몰라도끄덕끄덕`,
+    skills: {
+      science: 2.5,
+      liberal: 3,
+      art: 2.5,
+    },
     overview: [
       `사람들과의 관계에서 영향을 많이 받기 때문에, 자신을 응원해주는 사람이 많을 수록 더 큰 힘을 내는 타입이에요.`,
       `자신을 믿어주는 사람이 있다면 그 어떤 스트레스라도 이겨낼 수 있답니다!`,
@@ -100,6 +125,11 @@ export const RESULT: Result = {
     hashtag1: `#자유로운영혼`,
     hashtag2: `#열정열정열정`,
     hashtag3: `#팔방미인`,
+    skills: {
+      science: 1,
+      liberal: 2.5,
+      art: 4,
+    },
     overview: [
       `매우 사교적인 유형으로 누구를 만나더라도 금방 친해지는 최고의 친화력을 가졌어요.`,
       `사람들과의 관계에서 영향을 많이 받는데, 불편한 관계를 끊어내지 못하고 스트레스를 받는 경우가 종종 있어요. 때문에 학업에 영향이 가지 않도록 교우관계와 이성관계를 많이 신경써야 하는 타입이에요.`,
@@ -119,6 +149,11 @@ export const RESULT: Result = {
     hashtag1: `#암기왕`,
     hashtag2: `#리더로안나서지만`,
     hashtag3: `#막상하면잘함`,
+    skills: {
+      science: 3.5,
+      liberal: 5.5,
+      art: 1,
+    },
     overview: [
       `자기관리가 철저하고 책임감, 추진력이 좋은 타입이에요. 이러한 특징 때문에 리더를 맡게 되는 경우가 종종 있어요.`,
       `학교 성적도 우수한 편이며, 이러한 철두철미한 삶에 자부심을 느끼기도 해요.`,
@@ -138,6 +173,11 @@ export const RESULT: Result = {
     hashtag1: `#백문이불여일행`,
     hashtag2: `#자유로운학습`,
     hashtag3: `#오늘할일은내일의나에게`,
+    skills: {
+      science: 1.5,
+      liberal: 3.5,
+      art: 3,
+    },
     overview: [
       `활동적으로 학습할 때 가장 효과적인 유형이에요. `,
       `실행력이 좋아서 관심있는 분야가 생기면 즉흥적으로 뛰어들지만, 금방 다른 관심사가 생겨서 마무리짓지 못하는 경우가 많아요.`,
@@ -158,6 +198,11 @@ export const RESULT: Result = {
     hashtag1: `#번아웃주의`,
     hashtag2: `#잡생각많은편`,
     hashtag3: `#아이디어뱅크`,
+    skills: {
+      science: 4,
+      liberal: 2,
+      art: 4,
+    },
     overview: [
       `공감능력이 뛰어나서 다른 사람들에게 영향을 많이 받는 편이에요.`,
       `공부를 대체적으로 잘하는 편인데 공부가 좋아서라기 보다는, 부모님, 선생님 등 다른 사람에게 잘 보이기 위해 열심히 했던 경우가 많아요.`,
@@ -177,6 +222,11 @@ export const RESULT: Result = {
     hashtag1: `#언어에강함`,
     hashtag2: `#벼락치기`,
     hashtag3: `#생각많아서잠못잠`,
+    skills: {
+      science: 2.5,
+      liberal: 1.5,
+      art: 5.5,
+    },
     overview: [
       `계획보다는 자유로움을 추구하는 편이에요. 생각도 자유롭기 때문에 상상력이 풍부하고 창의적입니다.`,
       `한 번 공부를 시작하면 무서운 집중력을 발휘하여 그자리에서 끝내버리기 때문에 순간적인 집중력이 매우 뛰어나다고 볼 수 있어요.`,
@@ -197,6 +247,11 @@ export const RESULT: Result = {
     hashtag1: `#조별과제 혼자다함`,
     hashtag2: `#꼼수극혐`,
     hashtag3: `#문제해결사`,
+    skills: {
+      science: 6,
+      liberal: 4.5,
+      art: 4,
+    },
     overview: [
       `모든 유형 중 가장 공부를 잘하는 유형에 속해요. 학구열이 굉장히 높고 분석 및 추론 능력이 탁월합니다.`,
       `책으로만 배우는 추상적인 개념들을 논리적, 분석적으로 잘 다루기 때문에 법학, 과학, 수학 등에 뛰어난 모습을 보입니다.`,
@@ -216,6 +271,11 @@ export const RESULT: Result = {
     hashtag1: `#게으른천재`,
     hashtag2: `#아이디어폭포`,
     hashtag3: `#방상태와머릿속이같음`,
+    skills: {
+      science: 3.5,
+      liberal: 3,
+      art: 3,
+    },
     overview: [
       `항상 머릿속에 생각이 많아요. 쏟아지는 아이디어와 함께 하루를 시작하는 타입이랍니다.`,
       `이 유형의 사람들은 천재적인 이론이나 난해한 논리로 유명하며 여러 유형들 중 가장 논리적인 유형 중 하나입니다.`,
@@ -237,6 +297,11 @@ export const RESULT: Result = {
     hashtag1: `#게으른`,
     hashtag2: `#완벽주의`,
     hashtag3: ` #조별과제싫어`,
+    skills: {
+      science: 4,
+      liberal: 3,
+      art: 2,
+    },
     overview: [
       `끈기와 인내심이 강한 성격이에요. 아무리 지루한 과목이라도 꾸준한 집중력을 보여줍니다.`,
       `책을 읽을 때, 목차부터 시작해서 끝까지 정독하는 느낌이에요. 독학이 가능한 스타일이며, 논리적인 개념이 연결되지 않더라도 많은 양의 정보를 암기하는 능력이 탁월해요.`,
@@ -256,6 +321,11 @@ export const RESULT: Result = {
     hashtag1: `#수행평가장인`,
     hashtag2: `#애매한망나니`,
     hashtag3: `#호기심많음`,
+    skills: {
+      science: 1.5,
+      liberal: 2.5,
+      art: 6,
+    },
     overview: [
       `감성이 풍부하며, 감성을 자극하는 주제에 대해 공부할 때 가장 기억이 오래가는 타입이에요.`,
       `더 시각적이고, 정리가 잘 된 자료일수록 머리에 잘들어오는 경향이 있습니다.`,
@@ -274,6 +344,11 @@ export const RESULT: Result = {
     hashtag1: `#전형적인노력파`,
     hashtag2: `#우직한나무`,
     hashtag3: `#인간계산기`,
+    skills: {
+      science: 4.5,
+      liberal: 6,
+      art: 1.5,
+    },
     overview: [
       `공부를 시작하기 전에 목표와 계획을 설정하고, 하나씩 달성하며 성취감을 느끼는 타입이에요.`,
       `해야할 일을 모두 계획 해 놓고나면, 하고자 하는 일에 마음 놓고 집중할 수 있답니다.`,
@@ -292,6 +367,11 @@ export const RESULT: Result = {
     hashtag1: `#호기심왕`,
     hashtag2: `#의심왕`,
     hashtag3: `#의외로공부잘함`,
+    skills: {
+      science: 2.5,
+      liberal: 4.5,
+      art: 3,
+    },
     overview: [
       `항상 호기심이 넘쳐요. 하지만 문제에 대한 호기심 보다는 어떻게 문제를 해결할까 혹은 실용적인 방안에 더 관심이 많답니다.`,
       `구체적인 사례나 경험에서 배우는 타입! 때문에 이론만 배우는 수업은 재미없어요~`,

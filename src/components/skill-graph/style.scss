@@ -1,8 +1,0 @@
-@import "@stylesheets/mixin.scss";
-
-.result-graph {
-  @include flexbox($justify-content: center, $align-items: center);
-  width: 100%;
-  border: 1px solid var(--color-black);
-  border-radius: var(--fontSize-4);
-}
