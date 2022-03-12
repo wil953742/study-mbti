@@ -1,0 +1,9 @@
+@import "@stylesheets/mixin.scss";
+
+.skill-graph {
+  position: absolute;
+  top: 130px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: transform 1.5s ease;
+}

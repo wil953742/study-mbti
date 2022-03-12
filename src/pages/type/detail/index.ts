@@ -6,7 +6,8 @@ import icShare from '@assets/images/ic-share.svg';
 import icAgain from '@assets/images/ic-again.svg';
 import resultImg from '@assets/images/img-sample.png';
 import ToastMessage from '@components/toast-message';
-import SkillGraph from '@components/skill-graph';
+import GraphBackground from '@components/graph-background';
+import SkillGraph from '@components/graph-skill';
 
 const successCopyMsg = `링크가 클립보드에 복사되었습니다`;
 const failCopyMsg = `복사가 실패했습니다! 다시 시도해 주세요`;
@@ -32,8 +33,8 @@ export default class Detail extends Component {
     } = RESULT[this.props.value as string];
 
     return `
-        <section class="success-toast-msg" style="opacity: 0%; transform: translateX(100px)"></section>
-        <section class="fail-toast-msg" style="opacity: 0%; transform: translateX(100px)"></section>
+        <section class="success-toast-msg" style="opacity: 0; transform: translateX(100px)"></section>
+        <section class="fail-toast-msg" style="opacity: 0; transform: translateX(100px)"></section>
         <section class="result-header">
           <h3>${subTitle}</h3>
           <h1>${mainTitle}</h1>
@@ -44,9 +45,15 @@ export default class Detail extends Component {
           <p>${hashtag3}</p>
         </section>
         <section class="result-character">
-          <img src="${resultImg} alt="result-img" />
+          <img src="${resultImg}" alt="result-img" />
         </section>
-        <section class="result-graph"></section>
+        <section class="result-graph">
+          <div class="graph-background"></div>
+          <div class="graph-skills"></div>
+          <span class="skill art">예술성</span>
+          <span class="skill liberal">문과력</span>
+          <span class="skill science">이과력</span>
+        </section>
         <section class="result-overview">
           <section>
             <div class="double-line"></div>
@@ -102,7 +109,7 @@ export default class Detail extends Component {
       $target.style.opacity = '0%';
     };
 
-    const copyToClipboard = (event: any) => {
+    const copyToClipboard = () => {
       const textAreaElement = document.createElement('textarea');
       document.body.appendChild(textAreaElement);
       textAreaElement.value = window.location.href;
@@ -119,11 +126,15 @@ export default class Detail extends Component {
   }
 
   mounted() {
+    const { skills } = RESULT[this.props.value as string];
     const $successToastMsg = $(this.$target, '.success-toast-msg');
     const $failToastMsg = $(this.$target, '.fail-toast-msg');
-    const $resultGraph = $(this.$target, '.result-graph');
+    const $graphBackground = $(this.$target, '.graph-background');
+    const $graphSkills = $(this.$target, '.graph-skills');
+
     new ToastMessage($successToastMsg, { value: successCopyMsg });
     new ToastMessage($failToastMsg, { value: failCopyMsg });
-    new SkillGraph($resultGraph);
+    new GraphBackground($graphBackground);
+    new SkillGraph($graphSkills, { value: skills });
   }
 }

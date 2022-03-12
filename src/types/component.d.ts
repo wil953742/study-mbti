@@ -24,6 +24,11 @@ interface Result {
     hashtag1: string;
     hashtag2: string;
     hashtag3: string;
+    skills: {
+      science: number;
+      liberal: number;
+      art: number;
+    };
     overview: string[];
     recommend: string[];
   };
