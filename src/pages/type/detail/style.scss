@@ -91,6 +91,7 @@
     display: flex;
     flex-basis: 100%;
     align-items: center;
+    margin: 10px 0;
 
     .double-line {
       height: calc(var(--fontSize-1) / 4);
@@ -111,9 +112,10 @@
 
     & > .result-content {
       width: 100%;
-      margin-bottom: var(--fontSize-0);
       line-height: var(--fontSize-3);
     }
+
+    margin-bottom: var(--fontSize-1);
   }
 }
 
@@ -142,7 +144,7 @@
 .result-btn {
   @include flexbox($direction: column, $justify-content: center, $align-items: center);
   margin-top: 20px;
-  margin-bottom: 4vh;
+  margin-bottom: 2vh;
   width: 100%;
 
   a,
