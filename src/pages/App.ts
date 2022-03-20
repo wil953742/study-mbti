@@ -1,7 +1,6 @@
 import Component from '@core/component';
 import './style.scss';
 import { $ } from '@util/query-selector';
-import { MBTI } from '@util/mbti';
 import { store } from '@core/store';
 import { setRouteAction } from '@core/action';
 
@@ -36,9 +35,7 @@ export default class App extends Component {
         new Test($main);
         break;
       case 'type':
-        const path = MBTI.includes(subPath.toUpperCase())
-          ? `/type/${subPath.toUpperCase()}`
-          : `/type`;
+        const path = !subPath ? '/type' : `/type/${subPath}`;
         if (!popState)
           history.pushState({ mainPath, subPath }, 'typepage', path);
         new Type($main, { value: subPath });
