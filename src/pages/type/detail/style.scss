@@ -1,4 +1,4 @@
-@import '@stylesheets/mixin.scss';
+@import "@stylesheets/mixin.scss";
 
 .success-toast-msg,
 .fail-toast-msg {
@@ -99,10 +99,21 @@
     }
   }
 
-  & > .result-content {
-    width: 100%;
-    margin-bottom: var(--fontSize-0);
-    line-height: var(--fontSize-3);
+  .content-container {
+    @include flexbox($justify-content: space-between);
+
+    & > img {
+      padding: 4px 6px 0 0;
+      width: 16px;
+      height: 16px;
+
+    }
+
+    & > .result-content {
+      width: 100%;
+      margin-bottom: var(--fontSize-0);
+      line-height: var(--fontSize-3);
+    }
   }
 }
 
@@ -131,6 +142,7 @@
 .result-btn {
   @include flexbox($direction: column, $justify-content: center, $align-items: center);
   margin-top: 20px;
+  margin-bottom: 4vh;
   width: 100%;
 
   a,

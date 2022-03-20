@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 require('dotenv').config();
 
 const { MODE } = process.env;
@@ -96,6 +97,9 @@ module.exports = {
       // },
       hash: true,
       inject: 'body',
+    }),
+    new FaviconsWebpackPlugin({
+      logo: './src/assets/images/favicon.png',
     }),
   ],
 };
