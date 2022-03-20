@@ -4,6 +4,7 @@ import { $ } from '@util/query-selector';
 import { RESULT } from '@assets/text/result';
 import icShare from '@assets/images/ic-share.svg';
 import icAgain from '@assets/images/ic-again.svg';
+import icPencil from '@assets/images/ic-pencil.svg';
 import resultImg from '@assets/images/img-sample.png';
 import ToastMessage from '@components/toast-message';
 import GraphBackground from '@components/graph-background';
@@ -14,9 +15,15 @@ const failCopyMsg = `복사가 실패했습니다! 다시 시도해 주세요`;
 
 export default class Detail extends Component {
   resultContentGenerator(contentList: string[]) {
+    const template = (content: string) =>
+      `<div class="content-container">
+        <img src=${icPencil} alt="image-pencil"/>
+        <p class="result-content">${content}</p>
+       </div>`;
+
     let string = ``;
     contentList.forEach((content) => {
-      string += `<p class="result-content">${content}</p>`;
+      string += template(content);
     });
     return string;
   }
