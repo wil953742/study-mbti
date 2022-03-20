@@ -36,13 +36,17 @@ export default class App extends Component {
         new Test($main);
         break;
       case 'type':
-        const subPathToUpper = subPath.toUpperCase();
-        const path = MBTI.includes(subPathToUpper)
-          ? `/type/${subPathToUpper}`
-          : `/type`;
+        let mbtiType = '';
+        let path = '/type';
+
+        if (MBTI.includes(subPath.toUpperCase())) {
+          mbtiType = subPath.toUpperCase();
+          path += `/${subPath.toUpperCase()}`;
+        }
+
         if (!popState)
-          history.pushState({ mainPath, subPathToUpper }, 'typepage', path);
-        new Type($main, { value: subPathToUpper });
+          history.pushState({ mainPath, mbtiType }, 'typepage', path);
+        new Type($main, { value: mbtiType });
         break;
       default:
         history.replaceState(
