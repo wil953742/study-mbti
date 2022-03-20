@@ -62,18 +62,6 @@ module.exports = {
         ],
         type: 'javascript/auto',
       },
-      // {
-      //   test: /\.(woff|woff2|eot|ttf|otf)$/,
-      //   use: [
-      //     {
-      //       loader: 'file-loader',
-      //       options: {
-      //         name: 'font/[name].[ext]?[hash]',
-      //         //publicPath: './dist/image/',
-      //       },
-      //     },
-      //   ],
-      // },
     ],
   },
   resolve: {
@@ -92,9 +80,9 @@ module.exports = {
     new MiniCssExtractPlugin({ filename: 'style.css' }),
     new HtmlWebpackPlugin({
       template: './src/index.html',
-      // minify: {
-      //   collapseWhitespace: true,
-      // },
+      minify: {
+        collapseWhitespace: true,
+      },
       hash: true,
       inject: 'body',
     }),
